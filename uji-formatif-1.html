@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uji Formatif Bab 1 - Perubahan Sosial | Ilmu Pengetahuan Sosial Kelas 9</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #1a5276, #2e86c1);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f9e79f;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #1a5276 0%, #2e86c1 100%);
+            color: #fff;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .hero .breadcrumb {
+            font-size: 0.9rem;
+            color: #d4e6f1;
+            margin-bottom: 1rem;
+        }
+
+        .hero .breadcrumb a {
+            color: #f9e79f;
+            text-decoration: none;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .chapter-label {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero .description {
+            max-width: 750px;
+            margin: 0 auto 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .nav-buttons a {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            color: #fff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .nav-buttons a:hover {
+            background: #f39c12;
+            border-color: #f39c12;
+        }
+
+        .nav-buttons a.primary {
+            background: #f39c12;
+            border-color: #f39c12;
+        }
+
+        .nav-buttons a.primary:hover {
+            background: #e67e22;
+            border-color: #e67e22;
+        }
+
+        /* Content */
+        .content {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .content h2 {
+            color: #1a5276;
+            font-size: 1.6rem;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #f39c12;
+        }
+
+        .content h2:first-child {
+            margin-top: 0;
+        }
+
+        .content h3 {
+            color: #2e86c1;
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.8rem;
+        }
+
+        .content p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .content strong {
+            color: #1a5276;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: #eaf2f8;
+            border-left: 4px solid #2e86c1;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-box h4 {
+            color: #1a5276;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background: #fef9e7;
+            border-left: 4px solid #f39c12;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+            color: #7d6608;
+            font-weight: 500;
+        }
+
+        /* Form */
+        .form-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border: 1px solid #e0e0e0;
+        }
+
+        .form-section h3 {
+            color: #1a5276;
+            margin-bottom: 1.2rem;
+            font-size: 1.2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+            color: #333;
+            font-size: 0.95rem;
+        }
+
+        .form-group label .required {
+            color: #e74c3c;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 0.6rem 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: border 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #2e86c1;
+            box-shadow: 0 0 0 3px rgba(46,134,193,0.15);
+        }
+
+        /* Question */
+        .question {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .question:hover {
+            border-color: #2e86c1;
+            box-shadow: 0 2px 10px rgba(46,134,193,0.1);
+        }
+
+        .question.correct {
+            border-color: #27ae60;
+            background: #eafaf1;
+        }
+
+        .question.incorrect {
+            border-color: #e74c3c;
+            background: #fdedec;
+        }
+
+        .question-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            gap: 0.8rem;
+        }
+
+        .question-number {
+            background: #1a5276;
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .question-score {
+            margin-left: auto;
+            background: #f39c12;
+            color: #fff;
+            padding: 0.2rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .question-text {
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .option {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            padding: 0.6rem 0.8rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: #fff;
+        }
+
+        .option:hover {
+            background: #eaf2f8;
+            border-color: #2e86c1;
+        }
+
+        .option input[type="radio"] {
+            margin-top: 0.2rem;
+            cursor: pointer;
+            accent-color: #2e86c1;
+        }
+
+        .option label {
+            cursor: pointer;
+            flex: 1;
+            line-height: 1.5;
+        }
+
+        .option.selected {
+            background: #eaf2f8;
+            border-color: #2e86c1;
+        }
+
+        .option.correct-answer {
+            background: #d4efdf;
+            border-color: #27ae60;
+        }
+
+        .option.wrong-answer {
+            background: #fadbd8;
+            border-color: #e74c3c;
+        }
+
+        .feedback {
+            margin-top: 0.8rem;
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .feedback.correct {
+            background: #d4efdf;
+            color: #1e8449;
+            display: block;
+        }
+
+        .feedback.incorrect {
+            background: #fadbd8;
+            color: #922b21;
+            display: block;
+        }
+
+        /* Essay */
+        .essay-question {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .essay-question .question-header {
+            margin-bottom: 0.8rem;
+        }
+
+        .essay-question textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            resize: vertical;
+            line-height: 1.6;
+        }
+
+        .essay-question textarea:focus {
+            outline: none;
+            border-color: #2e86c1;
+            box-shadow: 0 0 0 3px rgba(46,134,193,0.15);
+        }
+
+        .char-count {
+            text-align: right;
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 0.3rem;
+        }
+
+        /* Results */
+        .results {
+            background: linear-gradient(135deg, #1a5276, #2e86c1);
+            color: #fff;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+            display: none;
+        }
+
+        .results.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .results h2 {
+            color: #fff;
+            border-bottom: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .result-item {
+            background: rgba(255,255,255,0.15);
+            padding: 1.2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .result-item .label {
+            font-size: 0.85rem;
+            color: #d4e6f1;
+            margin-bottom: 0.3rem;
+        }
+
+        .result-item .value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #f9e79f;
+        }
+
+        .result-item .max {
+            font-size: 0.9rem;
+            color: #aed6f1;
+        }
+
+        .grade {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #f9e79f;
+            margin: 1rem 0;
+        }
+
+        .grade-label {
+            font-size: 1rem;
+            color: #d4e6f1;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: #f39c12;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(243,156,18,0.3);
+        }
+
+        .btn-secondary {
+            background: #1a5276;
+            color: #fff;
+        }
+
+        .btn-secondary:hover {
+            background: #2e86c1;
+            transform: translateY(-2px);
+        }
+
+        .btn-success {
+            background: #27ae60;
+            color: #fff;
+        }
+
+        .btn-success:hover {
+            background: #229954;
+            transform: translateY(-2px);
+        }
+
+        .btn-danger {
+            background: #e74c3c;
+            color: #fff;
+        }
+
+        .btn-danger:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        .btn-email {
+            background: #8e44ad;
+            color: #fff;
+        }
+
+        .btn-email:hover {
+            background: #7d3c98;
+            transform: translateY(-2px);
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .bottom-nav a {
+            display: inline-block;
+            background: #1a5276;
+            color: #fff;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .bottom-nav a:hover {
+            background: #2e86c1;
+            transform: translateY(-2px);
+        }
+
+        .bottom-nav a.next {
+            background: #27ae60;
+        }
+
+        .bottom-nav a.next:hover {
+            background: #229954;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1a5276, #2e86c1);
+            color: #fff;
+            padding: 3rem 2rem 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #f9e79f;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-section p {
+            font-size: 0.9rem;
+            color: #d4e6f1;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        .footer-section ul li a {
+            color: #d4e6f1;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #f9e79f;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.85rem;
+            color: #aed6f1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .content {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+
+            .content h2 {
+                font-size: 1.3rem;
+            }
+
+            .bottom-nav {
+                flex-direction: column;
+            }
+
+            .bottom-nav a {
+                width: 100%;
+                text-align: center;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .results-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#bab">Daftar Bab</a></li>
+            <li><a href="1.html">Materi Bab 1</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="breadcrumb">
+            <a href="index.html">Ilmu Pengetahuan Sosial</a> / 
+            <a href="index.html">Beranda</a>
+        </div>
+        <span class="chapter-label">📋 UJI FORMATIF BAB 1</span>
+        <h1>Perubahan Sosial</h1>
+        <p class="description">
+            📋 Bagian A: Pilihan Ganda (10 soal, skor 10/soal) | ✍️ Bagian B: Essay (5 soal, skor 20/soal)
+        </p>
+        <p class="description" style="font-size: 0.95rem;">
+            Materi: Pengertian perubahan sosial, teori-teori perubahan sosial, faktor penyebab, 
+            faktor pendorong dan penghambat, bentuk-bentuk perubahan, dampak perubahan sosial, 
+            serta relevansinya dengan nilai-nilai Islam.
+        </p>
+        <p class="description" style="font-size: 0.9rem; color: #d4e6f1;">
+            Waktu: Tidak terbatas | Total Skor: 200 poin
+        </p>
+        <div class="nav-buttons">
+            <a href="index.html">🏠 Beranda</a>
+            <a href="1.html">📖 Materi Bab 1</a>
+            <a href="2.html">Bab Selanjutnya →</a>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="content">
+
+        <h2>📋 Data Siswa</h2>
+        <form id="studentForm" class="form-section">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Nama Lengkap <span class="required">*</span></label>
+                    <input type="text" id="nama" name="nama" required placeholder="Masukkan nama lengkap">
+                </div>
+                <div class="form-group">
+                    <label>NIS <span class="required">*</span></label>
+                    <input type="text" id="nis" name="nis" required placeholder="Nomor Induk Siswa">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>📅 Tanggal Ujian</label>
+                    <input type="date" id="tanggal" name="tanggal">
+                </div>
+                <div class="form-group">
+                    <label>Kelas <span class="required">*</span></label>
+                    <select id="kelas" name="kelas" required>
+                        <option value="">Pilih Kelas</option>
+                        <option value="9A">Kelas 9A</option>
+                        <option value="9B">Kelas 9B</option>
+                        <option value="9C">Kelas 9C</option>
+                        <option value="9D">Kelas 9D</option>
+                        <option value="9E">Kelas 9E</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Semester</label>
+                    <select id="semester" name="semester">
+                        <option value="">Pilih Semester</option>
+                        <option value="1" selected>Semester 1 (Ganjil)</option>
+                        <option value="2">Semester 2 (Genap)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Mata Pelajaran</label>
+                    <input type="text" id="mapel" name="mapel" value="Ilmu Pengetahuan Sosial" readonly>
+                </div>
+            </div>
+        </form>
+
+        <h2>📋 Bagian A – Pilihan Ganda</h2>
+        <div class="warning-box">
+            ⚠️ Lengkapi semua 10 soal pilihan ganda! Setiap soal bernilai 10 poin.
+        </div>
+
+        <div id="pgSection">
+            <!-- Soal 1 -->
+            <div class="question" data-question="1" data-answer="c">
+                <div class="question-header">
+                    <span class="question-number">1</span>
+                    <span class="question-score">10 poin</span>
+                </div>
+                <p class="question-text">Menurut Selo Soemardjan, perubahan sosial adalah...</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="q1" id="q1a" value="a">
+                        <label for="q1a">a) Perubahan yang mencakup unsur-unsur kebudayaan material maupun immaterial</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q1" id="q1b" value="b">
+                        <label for="q1b">b) Perubahan-perubahan yang terjadi dalam struktur dan fungsi masyarakat</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q1" id="q1c" value="c">
+                        <label for="q1c">c) Segala perubahan pada lembaga-lembaga kemasyarakatan yang memengaruhi sistem sosialnya</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q1" id="q1d" value="d">
+                        <label for="q1d">d) Perubahan sebagai akibat dari perubahan kondisi masyarakat yang memengaruhi cara berpikir</label>
+                    </div>
+                </div>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- Soal 2 -->
+            <div class="question" data-question="2" data-answer="b">
+                <div class="question-header">
+                    <span class="question-number">2</span>
+                    <span class="question-score">10 poin</span>
+                </div>
+                <p class="question-text">Teori yang memandang perubahan sosial sebagai proses yang lambat dan bertahap dari bentuk sederhana menuju kompleks disebut...</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="q2" id="q2a" value="a">
+                        <label for="q2a">a) Teori Revolusi</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q2" id="q2b" value="b">
+                        <label for="q2b">b) Teori Evolusi</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q2" id="q2c" value="c">
+                        <label for="q2c">c) Teori Siklus</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q2" id="q2d" value="d">
+                        <label for="q2d">d) Teori Fungsionalis</label>
+                    </div>
+                </div>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- Soal 3 -->
+            <div class="question" data-question="3" data-answer="c">
+                <div class="question-header">
+                    <span class="question-number">3</span>
+                    <span class="question-score">10 poin</span>
+                </div>
+                <p class="question-text">Ahli sosiologi yang mengemukakan konsep <em>cultural lag</em> (ketertinggalan budaya) adalah...</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="q3" id="q3a" value="a">
+                        <label for="q3a">a) Karl Marx</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q3" id="q3b" value="b">
+                        <label for="q3b">b) Emile Durkheim</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q3" id="q3c" value="c">
+                        <label for="q3c">c) William F. Ogburn</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q3" id="q3d" value="d">
+                        <label for="q3d">d) Pitirim A. Sorokin</label>
+                    </div>
+                </div>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- Soal 4 -->
+            <div class="question" data-question="4" data-answer="a">
+                <div class="question-header">
+                    <span class="question-number">4</span>
+                    <span class="question-score">10 poin</span>
+                </div>
+                <p class="question-text">Berikut ini yang termasuk faktor <strong>internal</strong> penyebab perubahan sosial adalah...</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="q4" id="q4a" value="a">
+                        <label for="q4a">a) Penemuan-penemuan baru (inovasi) dalam masyarakat</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q4" id="q4b" value="b">
+                        <label for="q4b">b) Pengaruh kebudayaan masyarakat lain</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q4" id="q4c" value="c">
+                        <label for="q4c">c) Bencana alam dan perubahan iklim</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q4" id="q4d" value="d">
+                        <label for="q4d">d) Peperangan antarnegara</label>
+                    </div>
+                </div>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- Soal 5 -->
+            <div class="question" data-question="5" data-answer="d">
+                <div class="question-header">
+                    <span class="question-number">5</span>
+                    <span class="question-score">10 poin</span>
+                </div>
+                <p class="question-text">Proses penyebaran unsur-unsur kebudayaan asing ke dalam kebudayaan lokal disebut...</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="q5" id="q5a" value="a">
+                        <label for="q5a">a) Asimilasi</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q5" id="q5b" value="b">
+                        <label for="q5b">b) Akulturasi</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q5" id="q5c" value="c">
+                        <label for="q5c">c) Akomodasi</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q5" id="q5d" value="d">
+                        <label for="q5d">d) Difusi</label>
+                    </div>
+                </div>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- Soal 6 -->
+            <div class="question" data-question="6" data-answer="b">
+                <div class="question-header">
+                    <span class="question-number">6</span>
+                    <span class="question-score">10 poin</span>
+                </div>
+                <p class="question-text">Perubahan sosial yang berlangsung cepat dan mendasar, disertai pergolakan besar, disebut...</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="q6" id="q6a" value="a">
+                        <label for="q6a">a) Evolusi</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q6" id="q6b" value="b">
+                        <label for="q6b">b) Revolusi</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q6" id="q6c" value="c">
+                        <label for="q6c">c) Progress</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q6" id="q6d" value="d">
+                        <label for="q6d">d) Regress</label>
+                    </div>
+                </div>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- Soal 7 -->
+            <div class="question" data-question="7" data-answer="c">
+                <div class="question-header">
+                    <span class="question-number">7</span>
+                    <span class="question-score">10 poin</span>
+                </div>
+                <p class="question-text">Ketidaksiapan masyarakat menghadapi perubahan yang terlalu cepat sehingga menimbulkan keguncangan psikologis disebut...</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="q7" id="q7a" value="a">
+                        <label for="q7a">a) Cultural lag</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q7" id="q7b" value="b">
+                        <label for="q7b">b) Disorganisasi sosial</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q7" id="q7c" value="c">
+                        <label for="q7c">c) Culture shock (geggar budaya)</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q7" id="q7d" value="d">
+                        <label for="q7d">d) Akulturasi</label>
+                    </div>
+                </div>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- Soal 8 -->
+            <div class="question" data-question="8" data-answer="b">
+                <div class="question-header">
+                    <span class="question-number">8</span>
+                    <span class="question-score">10 poin</span>
+                </div>
+                <p class="question-text">Revolusi Indonesia tahun 1945 yang mengubah status dari negara jajahan menjadi negara merdeka termasuk bentuk perubahan sosial berdasarkan...</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="q8" id="q8a" value="a">
+                        <label for="q8a">a) Waktu — evolusi</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q8" id="q8b" value="b">
+                        <label for="q8b">b) Waktu — revolusi</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q8" id="q8c" value="c">
+                        <label for="q8c">c) Skala pengaruh — perubahan kecil</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q8" id="q8d" value="d">
+                        <label for="q8d">d) Orientasi — regress</label>
+                    </div>
+                </div>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- Soal 9 -->
+            <div class="question" data-question="9" data-answer="d">
+                <div class="question-header">
+                    <span class="question-number">9</span>
+                    <span class="question-score">10 poin</span>
+                </div>
+                <p class="question-text">Berikut ini yang <strong>bukan</strong> merupakan faktor pendorong perubahan sosial adalah...</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="q9" id="q9a" value="a">
+                        <label for="q9a">a) Sikap terbuka terhadap hal baru</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q9" id="q9b" value="b">
+                        <label for="q9b">b) Pendidikan yang maju</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q9" id="q9c" value="c">
+                        <label for="q9c">c) Sistem pelapisan sosial yang terbuka</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q9" id="q9d" value="d">
+                        <label for="q9d">d) Adat atau kebiasaan yang mengakar kuat</label>
+                    </div>
+                </div>
+                <div class="feedback"></div>
+            </div>
+
+            <!-- Soal 10 -->
+            <div class="question" data-question="10" data-answer="c">
+                <div class="question-header">
+                    <span class="question-number">10</span>
+                    <span class="question-score">10 poin</span>
+                </div>
+                <p class="question-text">Ayat Al-Qur'an yang menegaskan bahwa Allah tidak akan mengubah keadaan suatu kaum sebelum mereka mengubah diri mereka sendiri terdapat dalam...</p>
+                <div class="options">
+                    <div class="option">
+                        <input type="radio" name="q10" id="q10a" value="a">
+                        <label for="q10a">a) QS. Al-Baqarah: 2</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q10" id="q10b" value="b">
+                        <label for="q10b">b) QS. An-Nahl: 97</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q10" id="q10c" value="c">
+                        <label for="q10c">c) QS. Ar-Ra'd: 11</label>
+                    </div>
+                    <div class="option">
+                        <input type="radio" name="q10" id="q10d" value="d">
+                        <label for="q10d">d) QS. Ali Imran: 104</label>
+                    </div>
+                </div>
+                <div class="feedback"></div>
+            </div>
+        </div>
+
+        <h2>✍️ Bagian B – Essay</h2>
+        <div class="warning-box">
+            ⚠️ Isi Nama Lengkap dan NIS terlebih dahulu! Setiap soal essay bernilai 20 poin.
+        </div>
+
+        <div id="essaySection">
+            <!-- Essay 1 -->
+            <div class="essay-question">
+                <div class="question-header">
+                    <span class="question-number">1</span>
+                    <span class="question-score">20 poin</span>
+                </div>
+                <p class="question-text">Jelaskan pengertian perubahan sosial menurut Selo Soemardjan dan Kingsley Davis! Berikan masing-masing satu contoh konkret dalam kehidupan masyarakat!</p>
+                <textarea name="essay1" placeholder="Tuliskan jawaban Anda di sini..." oninput="updateCharCount(this)"></textarea>
+                <div class="char-count">0 karakter</div>
+            </div>
+
+            <!-- Essay 2 -->
+            <div class="essay-question">
+                <div class="question-header">
+                    <span class="question-number">2</span>
+                    <span class="question-score">20 poin</span>
+                </div>
+                <p class="question-text">Uraikan empat teori utama perubahan sosial (evolusi, revolusi, siklus, dan fungsionalis) beserta tokoh-tokoh yang mengemukakannya!</p>
+                <textarea name="essay2" placeholder="Tuliskan jawaban Anda di sini..." oninput="updateCharCount(this)"></textarea>
+                <div class="char-count">0 karakter</div>
+            </div>
+
+            <!-- Essay 3 -->
+            <div class="essay-question">
+                <div class="question-header">
+                    <span class="question-number">3</span>
+                    <span class="question-score">20 poin</span>
+                </div>
+                <p class="question-text">Jelaskan perbedaan antara faktor internal dan faktor eksternal penyebab perubahan sosial! Masing-masing berikan minimal tiga contoh!</p>
+                <textarea name="essay3" placeholder="Tuliskan jawaban Anda di sini..." oninput="updateCharCount(this)"></textarea>
+                <div class="char-count">0 karakter</div>
+            </div>
+
+            <!-- Essay 4 -->
+            <div class="essay-question">
+                <div class="question-header">
+                    <span class="question-number">4</span>
+                    <span class="question-score">20 poin</span>
+                </div>
+                <p class="question-text">Sebutkan dan jelaskan bentuk-bentuk perubahan sosial berdasarkan kriteria waktu, skala pengaruh, rencana, dan orientasi! Berikan contoh untuk masing-masing bentuk!</p>
+                <textarea name="essay4" placeholder="Tuliskan jawaban Anda di sini..." oninput="updateCharCount(this)"></textarea>
+                <div class="char-count">0 karakter</div>
+            </div>
+
+            <!-- Essay 5 -->
+            <div class="essay-question">
+                <div class="question-header">
+                    <span class="question-number">5</span>
+                    <span class="question-score">20 poin</span>
+                </div>
+                <p class="question-text">Jelaskan dampak positif dan negatif perubahan sosial! Bagaimana sikap selektif yang harus dilakukan seorang muslim dalam menghadapi perubahan sosial di era modernisasi dan globalisasi?</p>
+                <textarea name="essay5" placeholder="Tuliskan jawaban Anda di sini..." oninput="updateCharCount(this)"></textarea>
+                <div class="char-count">0 karakter</div>
+            </div>
+        </div>
+
+        <!-- Results -->
+        <div class="results" id="results">
+            <h2>📊 Hasil Uji Formatif</h2>
+            <p>Terima kasih telah menyelesaikan uji formatif ini!</p>
+
+            <div class="results-grid">
+                <div class="result-item">
+                    <div class="label">Skor Pilihan Ganda</div>
+                    <div class="value" id="pgScore">0</div>
+                    <div class="max">/ 100</div>
+                </div>
+                <div class="result-item">
+                    <div class="label">Skor Essay</div>
+                    <div class="value" id="essayScore">0</div>
+                    <div class="max">/ 100</div>
+                </div>
+                <div class="result-item">
+                    <div class="label">Skor Total</div>
+                    <div class="value" id="totalScore">0</div>
+                    <div class="max">/ 200</div>
+                </div>
+                <div class="result-item">
+                    <div class="label">Nilai Akhir</div>
+                    <div class="value" id="finalGrade">0</div>
+                    <div class="max">/ 100</div>
+                </div>
+            </div>
+
+            <div class="grade" id="gradeLabel">-</div>
+            <div class="grade-label" id="gradeDescription">-</div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button type="button" class="btn btn-primary" onclick="submitExam()">
+                ✉️ KIRIM JAWABAN & LIHAT HASIL
+            </button>
+            <button type="button" class="btn btn-success" onclick="downloadPDF()" id="btnPDF" style="display:none;">
+                📥 UNDUH PDF LENGKAP
+            </button>
+            <button type="button" class="btn btn-secondary" onclick="downloadScore()" id="btnScore" style="display:none;">
+                📊 UNDUH SKOR SAJA
+            </button>
+            <button type="button" class="btn btn-email" onclick="sendEmail()" id="btnEmail" style="display:none;">
+                ✉️ Kirim Email Guru
+            </button>
+            <button type="button" class="btn btn-danger" onclick="resetExam()">
+                🔄 MULAI ULANG
+            </button>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <a href="index.html">🏠 Kembali ke Beranda</a>
+            <a href="1.html">📖 Kembali ke Materi Bab 1</a>
+            <a href="2.html" class="next">Lanjut ke Materi Bab 2 →</a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Ilmu Pengetahuan Sosial</h3>
+                <p>Buku daras untuk peserta didik kelas 9 MTs. Materi perubahan sosial, globalisasi, ekonomi digital, hingga literasi finansial.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Navigasi</h3>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="index.html#tentang">Tentang Buku</a></li>
+                    <li><a href="index.html#bab">Daftar Bab</a></li>
+                    <li><a href="index.html#penulis">Penulis</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Bab Terkait</h3>
+                <ul>
+                    <li><a href="1.html">Bab 1: Perubahan Sosial</a></li>
+                    <li><a href="2.html">Bab 2: Bentuk Perubahan Sosial</a></li>
+                    <li><a href="3.html">Bab 3: Era Modernisasi</a></li>
+                    <li><a href="4.html">Bab 4: Globalisasi</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p>📧 mastutileni34@gmail.com</p>
+                <p>🏫 MTsN 6 Agam</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Leni Mastuti, S.Sos — MTsN 6 Agam. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set tanggal hari ini
+        document.getElementById('tanggal').valueAsDate = new Date();
+
+        // Update char count
+        function updateCharCount(textarea) {
+            const count = textarea.value.length;
+            textarea.nextElementSibling.textContent = count + ' karakter';
+        }
+
+        // Highlight option saat diklik
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('click', function() {
+                const radio = this.querySelector('input[type="radio"]');
+                radio.checked = true;
+                const question = this.closest('.question');
+                question.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        // Submit exam
+        function submitExam() {
+            const nama = document.getElementById('nama').value.trim();
+            const nis = document.getElementById('nis').value.trim();
+            const kelas = document.getElementById('kelas').value;
+
+            if (!nama || !nis || !kelas) {
+                alert('⚠️ Mohon lengkapi data siswa (Nama, NIS, dan Kelas) terlebih dahulu!');
+                return;
+            }
+
+            // Hitung skor PG
+            let pgScore = 0;
+            const questions = document.querySelectorAll('#pgSection .question');
+            let allAnswered = true;
+
+            questions.forEach(question => {
+                const qNum = question.dataset.question;
+                const correctAnswer = question.dataset.answer;
+                const selected = question.querySelector(`input[name="q${qNum}"]:checked`);
+                const feedback = question.querySelector('.feedback');
+
+                if (!selected) {
+                    allAnswered = false;
+                    feedback.className = 'feedback incorrect';
+                    feedback.innerHTML = '⚠️ Soal ini belum dijawab!';
+                    question.classList.add('incorrect');
+                    return;
+                }
+
+                const userAnswer = selected.value;
+                const correctOption = question.querySelector(`input[value="${correctAnswer}"]`).parentElement;
+                const userOption = selected.parentElement;
+
+                if (userAnswer === correctAnswer) {
+                    pgScore += 10;
+                    question.classList.remove('incorrect');
+                    question.classList.add('correct');
+                    correctOption.classList.add('correct-answer');
+                    feedback.className = 'feedback correct';
+                    feedback.innerHTML = '✅ Benar! +10 poin';
+                } else {
+                    question.classList.remove('correct');
+                    question.classList.add('incorrect');
+                    userOption.classList.add('wrong-answer');
+                    correctOption.classList.add('correct-answer');
+                    feedback.className = 'feedback incorrect';
+                    feedback.innerHTML = `❌ Salah. Jawaban yang benar: <strong>${correctAnswer.toUpperCase()}</strong>`;
+                }
+            });
+
+            if (!allAnswered) {
+                alert('⚠️ Mohon jawab semua soal pilihan ganda terlebih dahulu!');
+                return;
+            }
+
+            // Hitung skor essay (otomatis berdasarkan panjang jawaban)
+            let essayScore = 0;
+            const essays = document.querySelectorAll('#essaySection textarea');
+            essays.forEach(essay => {
+                const length = essay.value.trim().length;
+                let score = 0;
+                if (length >= 300) score = 20;
+                else if (length >= 200) score = 16;
+                else if (length >= 100) score = 12;
+                else if (length >= 50) score = 8;
+                else if (length > 0) score = 4;
+                essayScore += score;
+            });
+
+            const totalScore = pgScore + essayScore;
+            const finalGrade = Math.round((totalScore / 200) * 100);
+
+            // Tampilkan hasil
+            document.getElementById('pgScore').textContent = pgScore;
+            document.getElementById('essayScore').textContent = essayScore;
+            document.getElementById('totalScore').textContent = totalScore;
+            document.getElementById('finalGrade').textContent = finalGrade;
+
+            let gradeLabel = '';
+            let gradeDesc = '';
+            if (finalGrade >= 90) { gradeLabel = 'A'; gradeDesc = 'Luar Biasa! Pertahankan prestasimu! 🌟'; }
+            else if (finalGrade >= 80) { gradeLabel = 'B'; gradeDesc = 'Sangat Baik! Terus tingkatkan! 👍'; }
+            else if (finalGrade >= 70) { gradeLabel = 'C'; gradeDesc = 'Baik. Masih ada ruang untuk berkembang.'; }
+            else if (finalGrade >= 60) { gradeLabel = 'D'; gradeDesc = 'Cukup. Perlu belajar lebih giat lagi.'; }
+            else { gradeLabel = 'E'; gradeDesc = 'Perlu perbaikan. Pelajari kembali materinya ya!'; }
+
+            document.getElementById('gradeLabel').textContent = gradeLabel;
+            document.getElementById('gradeDescription').textContent = gradeDesc;
+
+            document.getElementById('results').classList.add('show');
+            document.getElementById('btnPDF').style.display = 'inline-flex';
+            document.getElementById('btnScore').style.display = 'inline-flex';
+            document.getElementById('btnEmail').style.display = 'inline-flex';
+
+            document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            // Simpan data
+            window.examData = {
+                nama, nis, kelas,
+                tanggal: document.getElementById('tanggal').value,
+                pgScore, essayScore, totalScore, finalGrade, gradeLabel
+            };
+        }
+
+        // Download PDF
+        function downloadPDF() {
+            if (!window.examData) {
+                alert('⚠️ Silakan kirim jawaban terlebih dahulu!');
+                return;
+            }
+
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const data = window.examData;
+
+            // Header
+            doc.setFillColor(26, 82, 118);
+            doc.rect(0, 0, 210, 30, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFontSize(16);
+            doc.setFont('helvetica', 'bold');
+            doc.text('UJI FORMATIF BAB 1', 105, 12, { align: 'center' });
+            doc.setFontSize(12);
+            doc.setFont('helvetica', 'normal');
+            doc.text('Perubahan Sosial - Ilmu Pengetahuan Sosial Kelas 9', 105, 20, { align: 'center' });
+            doc.setFontSize(9);
+            doc.text('MTsN 6 Agam | Leni Mastuti, S.Sos', 105, 26, { align: 'center' });
+
+            // Data Siswa
+            doc.setTextColor(0, 0, 0);
+            doc.setFontSize(11);
+            doc.setFont('helvetica', 'bold');
+            doc.text('DATA SISWA', 14, 40);
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(10);
+            doc.text(`Nama Lengkap : ${data.nama}`, 14, 48);
+            doc.text(`NIS          : ${data.nis}`, 14, 54);
+            doc.text(`Kelas        : ${data.kelas}`, 14, 60);
+            doc.text(`Tanggal      : ${data.tanggal}`, 14, 66);
+
+            // Skor
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(11);
+            doc.text('HASIL PENILAIAN', 14, 78);
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(10);
+            doc.text(`Skor Pilihan Ganda : ${data.pgScore} / 100`, 14, 86);
+            doc.text(`Skor Essay         : ${data.essayScore} / 100`, 14, 92);
+            doc.text(`Skor Total         : ${data.totalScore} / 200`, 14, 98);
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(12);
+            doc.text(`Nilai Akhir        : ${data.finalGrade} (Grade: ${data.gradeLabel})`, 14, 106);
+
+            // Jawaban PG
+            doc.setFontSize(11);
+            doc.text('JAWABAN PILIHAN GANDA', 14, 120);
+            doc.setFontSize(9);
+            doc.setFont('helvetica', 'normal');
+            let y = 128;
+            document.querySelectorAll('#pgSection .question').forEach((q, i) => {
+                const qNum = q.dataset.question;
+                const correct = q.dataset.answer;
+                const selected = q.querySelector(`input[name="q${qNum}"]:checked`);
+                const user = selected ? selected.value : '-';
+                const isCorrect = user === correct ? '✓' : '✗';
+                doc.text(`${i+1}. Jawaban: ${user.toUpperCase()} (Kunci: ${correct.toUpperCase()}) ${isCorrect}`, 14, y);
+                y += 6;
+            });
+
+            // Jawaban Essay
+            y += 6;
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(11);
+            doc.text('JAWABAN ESSAY', 14, y);
+            y += 8;
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(9);
+            document.querySelectorAll('#essaySection textarea').forEach((ta, i) => {
+                const text = ta.value.trim() || '(tidak dijawab)';
+                const lines = doc.splitTextToSize(`${i+1}. ${text}`, 180);
+                if (y + lines.length * 4 > 280) {
+                    doc.addPage();
+                    y = 20;
+                }
+                doc.text(lines, 14, y);
+                y += lines.length * 4 + 4;
+            });
+
+            // Footer
+            const pageCount = doc.internal.getNumberOfPages();
+            for (let i = 1; i <= pageCount; i++) {
+                doc.setPage(i);
+                doc.setFontSize(8);
+                doc.setTextColor(128, 128, 128);
+                doc.text(`© 2026 Leni Mastuti, S.Sos — MTsN 6 Agam | Halaman ${i} dari ${pageCount}`, 105, 290, { align: 'center' });
+            }
+
+            doc.save(`Uji-Formatif-Bab1-${data.nama.replace(/\s+/g, '_')}.pdf`);
+        }
+
+        // Download Score Only
+        function downloadScore() {
+            if (!window.examData) {
+                alert('⚠️ Silakan kirim jawaban terlebih dahulu!');
+                return;
+            }
+
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const data = window.examData;
+
+            doc.setFillColor(26, 82, 118);
+            doc.rect(0, 0, 210, 30, 'F');
+            doc.setTextColor(255, 255, 255);
+            doc.setFontSize(16);
+            doc.setFont('helvetica', 'bold');
+            doc.text('HASIL UJI FORMATIF', 105, 12, { align: 'center' });
+            doc.setFontSize(11);
+            doc.text('Bab 1 - Perubahan Sosial', 105, 20, { align: 'center' });
+
+            doc.setTextColor(0, 0, 0);
+            doc.setFontSize(11);
+            doc.setFont('helvetica', 'normal');
+            doc.text(`Nama  : ${data.nama}`, 14, 45);
+            doc.text(`NIS   : ${data.nis}`, 14, 52);
+            doc.text(`Kelas : ${data.kelas}`, 14, 59);
+            doc.text(`Tanggal: ${data.tanggal}`, 14, 66);
+
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(14);
+            doc.text(`Nilai Akhir: ${data.finalGrade}`, 14, 85);
+            doc.setFontSize(18);
+            doc.setTextColor(243, 156, 18);
+            doc.text(`Grade: ${data.gradeLabel}`, 14, 100);
+
+            doc.setTextColor(0, 0, 0);
+            doc.setFontSize(10);
+            doc.setFont('helvetica', 'normal');
+            doc.text(`Pilihan Ganda: ${data.pgScore}/100`, 14, 115);
+            doc.text(`Essay        : ${data.essayScore}/100`, 14, 122);
+            doc.text(`Total        : ${data.totalScore}/200`, 14, 129);
+
+            doc.setFontSize(8);
+            doc.setTextColor(128, 128, 128);
+            doc.text('© 2026 Leni Mastuti, S.Sos — MTsN 6 Agam', 105, 290, { align: 'center' });
+
+            doc.save(`Skor-Bab1-${data.nama.replace(/\s+/g, '_')}.pdf`);
+        }
+
+        // Send Email
+        function sendEmail() {
+            if (!window.examData) {
+                alert('⚠️ Silakan kirim jawaban terlebih dahulu!');
+                return;
+            }
+
+            const data = window.examData;
+            const subject = encodeURIComponent(`Hasil Uji Formatif Bab 1 - ${data.nama} (${data.kelas})`);
+            const body = encodeURIComponent(
+                `Yth. Ibu Leni Mastuti, S.Sos,\n\n` +
+                `Berikut hasil Uji Formatif Bab 1 (Perubahan Sosial):\n\n` +
+                `Nama : ${data.nama}\n` +
+                `NIS  : ${data.nis}\n` +
+                `Kelas: ${data.kelas}\n` +
+                `Tanggal: ${data.tanggal}\n\n` +
+                `Skor Pilihan Ganda: ${data.pgScore}/100\n` +
+                `Skor Essay        : ${data.essayScore}/100\n` +
+                `Skor Total        : ${data.totalScore}/200\n` +
+                `Nilai Akhir       : ${data.finalGrade}\n` +
+                `Grade             : ${data.gradeLabel}\n\n` +
+                `Terima kasih.`
+            );
+            window.location.href = `mailto:mastutileni34@gmail.com?subject=${subject}&body=${body}`;
+        }
+
+        // Reset exam
+        function resetExam() {
+            if (!confirm('⚠️ Yakin ingin mengulang ujian? Semua jawaban akan dihapus.')) return;
+
+            document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+            document.querySelectorAll('.option').forEach(o => {
+                o.classList.remove('selected', 'correct-answer', 'wrong-answer');
+            });
+            document.querySelectorAll('.question').forEach(q => {
+                q.classList.remove('correct', 'incorrect');
+            });
+            document.querySelectorAll('.feedback').forEach(f => {
+                f.className = 'feedback';
+                f.innerHTML = '';
+            });
+            document.querySelectorAll('#essaySection textarea').forEach(ta => {
+                ta.value = '';
+                ta.nextElementSibling.textContent = '0 karakter';
+            });
+            document.getElementById('results').classList.remove('show');
+            document.getElementById('btnPDF').style.display = 'none';
+            document.getElementById('btnScore').style.display = 'none';
+            document.getElementById('btnEmail').style.display = 'none';
+            window.examData = null;
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+</html>

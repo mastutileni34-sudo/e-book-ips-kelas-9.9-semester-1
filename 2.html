@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 2 - Bentuk dan Contoh Perubahan Sosial | Ilmu Pengetahuan Sosial Kelas 9</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #1a5276, #2e86c1);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f9e79f;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #1a5276 0%, #2e86c1 100%);
+            color: #fff;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .hero .breadcrumb {
+            font-size: 0.9rem;
+            color: #d4e6f1;
+            margin-bottom: 1rem;
+        }
+
+        .hero .breadcrumb a {
+            color: #f9e79f;
+            text-decoration: none;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .chapter-label {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero .description {
+            max-width: 750px;
+            margin: 0 auto 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .nav-buttons a {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            color: #fff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .nav-buttons a:hover {
+            background: #f39c12;
+            border-color: #f39c12;
+        }
+
+        .nav-buttons a.primary {
+            background: #f39c12;
+            border-color: #f39c12;
+        }
+
+        .nav-buttons a.primary:hover {
+            background: #e67e22;
+            border-color: #e67e22;
+        }
+
+        /* Content */
+        .content {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .content h2 {
+            color: #1a5276;
+            font-size: 1.6rem;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #f39c12;
+        }
+
+        .content h2:first-child {
+            margin-top: 0;
+        }
+
+        .content h3 {
+            color: #2e86c1;
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.8rem;
+        }
+
+        .content p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .content ul, .content ol {
+            margin: 1rem 0 1rem 1.5rem;
+        }
+
+        .content ul li, .content ol li {
+            margin-bottom: 0.5rem;
+        }
+
+        .content strong {
+            color: #1a5276;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: #eaf2f8;
+            border-left: 4px solid #2e86c1;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-box h4 {
+            color: #1a5276;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .info-box ul {
+            margin: 0.5rem 0 0 1.2rem;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            background: #fef9e7;
+            border-left: 4px solid #f39c12;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: #555;
+        }
+
+        .quote-box .author {
+            display: block;
+            margin-top: 0.5rem;
+            font-style: normal;
+            font-weight: 600;
+            color: #1a5276;
+            font-size: 0.9rem;
+        }
+
+        /* Case Study */
+        .case-study {
+            background: linear-gradient(135deg, #fef9e7, #fdebd0);
+            border: 1px solid #f39c12;
+            padding: 1.5rem 2rem;
+            margin: 1.5rem 0;
+            border-radius: 10px;
+        }
+
+        .case-study h4 {
+            color: #d68910;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .case-study p {
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Table */
+        .content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: #fff;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+        }
+
+        .content table th {
+            background: #1a5276;
+            color: #fff;
+            padding: 0.8rem;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        .content table td {
+            padding: 0.8rem;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 0.95rem;
+        }
+
+        .content table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .content table tr:hover {
+            background: #eaf2f8;
+        }
+
+        /* Exam Tips */
+        .exam-tips {
+            background: linear-gradient(135deg, #fef9e7, #fdebd0);
+            border: 2px solid #f39c12;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+        }
+
+        .exam-tips h3 {
+            color: #d68910;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .exam-tips ul {
+            margin-left: 1.2rem;
+        }
+
+        .exam-tips ul li {
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .bottom-nav a {
+            display: inline-block;
+            background: #1a5276;
+            color: #fff;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .bottom-nav a:hover {
+            background: #2e86c1;
+            transform: translateY(-2px);
+        }
+
+        .bottom-nav a.quiz {
+            background: #f39c12;
+        }
+
+        .bottom-nav a.quiz:hover {
+            background: #e67e22;
+        }
+
+        .bottom-nav a.next {
+            background: #27ae60;
+        }
+
+        .bottom-nav a.next:hover {
+            background: #229954;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1a5276, #2e86c1);
+            color: #fff;
+            padding: 3rem 2rem 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #f9e79f;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-section p {
+            font-size: 0.9rem;
+            color: #d4e6f1;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        .footer-section ul li a {
+            color: #d4e6f1;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #f9e79f;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.85rem;
+            color: #aed6f1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .content {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+
+            .content h2 {
+                font-size: 1.3rem;
+            }
+
+            .bottom-nav {
+                flex-direction: column;
+            }
+
+            .bottom-nav a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#bab">Daftar Bab</a></li>
+            <li><a href="index.html#penulis">Penulis</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="breadcrumb">
+            <a href="index.html">Ilmu Pengetahuan Sosial</a> / 
+            <a href="index.html">Beranda</a>
+        </div>
+        <span class="chapter-label">BAB 2</span>
+        <h1>Bentuk dan Contoh Perubahan Sosial</h1>
+        <p class="description">
+            Mengenal berbagai bentuk perubahan sosial berdasarkan waktu, skala pengaruh, 
+            perencanaan, dan orientasi. Memahami contoh-contoh konkret perubahan sosial 
+            dalam berbagai bidang kehidupan masyarakat Indonesia.
+        </p>
+        <div class="nav-buttons">
+            <a href="index.html">🏠 Beranda</a>
+            <a href="uji-formatif-2.html" class="primary">📝 Uji Formatif Bab 2</a>
+            <a href="3.html">Bab Selanjutnya →</a>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="content">
+
+        <h2>A. Bentuk-Bentuk Perubahan Sosial Berdasarkan Waktu</h2>
+        <p>
+            Berdasarkan kecepatan terjadinya, perubahan sosial dapat dibedakan menjadi dua bentuk utama, 
+            yaitu <strong>evolusi</strong> dan <strong>revolusi</strong>. Kedua bentuk ini memiliki 
+            karakteristik yang sangat berbeda, baik dari segi kecepatan, dampak, maupun proses yang menyertainya.
+        </p>
+
+        <h3>1. Perubahan Evolusi</h3>
+        <p>
+            <strong>Evolusi</strong> adalah perubahan sosial yang berlangsung <strong>lambat, bertahap, 
+            dan dalam jangka waktu yang panjang</strong>. Perubahan ini terjadi tanpa rencana khusus 
+            dan biasanya mengikuti perkembangan alamiah masyarakat. Evolusi tidak menimbulkan 
+            gejolak yang berarti karena masyarakat memiliki waktu untuk menyesuaikan diri.
+        </p>
+        <p><strong>Ciri-ciri perubahan evolusi:</strong></p>
+        <ul>
+            <li>Berlangsung dalam waktu yang lama (puluhan hingga ratusan tahun)</li>
+            <li>Perubahan terjadi secara bertahap dan perlahan</li>
+            <li>Tidak disertai gejolak atau konflik besar</li>
+            <li>Mengikuti perkembangan alamiah masyarakat</li>
+            <li>Tidak direncanakan secara khusus</li>
+        </ul>
+        <p><strong>Contoh perubahan evolusi:</strong></p>
+        <ul>
+            <li>Perubahan masyarakat berburu dan meramu menjadi masyarakat agraris (pertanian)</li>
+            <li>Perubahan masyarakat agraris menjadi masyarakat industri</li>
+            <li>Perkembangan bentuk keluarga dari extended family menjadi nuclear family</li>
+            <li>Perubahan sistem mata pencaharian dari berladang berpindah ke pertanian menetap</li>
+        </ul>
+
+        <h3>2. Perubahan Revolusi</h3>
+        <p>
+            <strong>Revolusi</strong> adalah perubahan sosial yang berlangsung <strong>cepat dan mendasar</strong>, 
+            menyangkut sendi-sendi pokok kehidupan masyarakat. Revolusi biasanya disertai dengan 
+            konflik, pergolakan, atau gerakan besar yang mengubah struktur sosial secara drastis.
+        </p>
+        <p><strong>Ciri-ciri perubahan revolusi:</strong></p>
+        <ul>
+            <li>Berlangsung dalam waktu yang relatif singkat</li>
+            <li>Perubahan mendasar pada struktur sosial, politik, atau ekonomi</li>
+            <li>Seringkali disertai konflik, pergolakan, atau kekerasan</li>
+            <li>Adanya kepemimpinan atau gerakan yang menggerakkan perubahan</li>
+            <li>Mengubah tatanan lama secara menyeluruh</li>
+        </ul>
+        <p><strong>Syarat terjadinya revolusi (menurut Crane Brinton):</strong></p>
+        <ul>
+            <li>Ada ketidakpuasan masyarakat terhadap kondisi yang ada</li>
+            <li>Munculnya kelompok yang memimpin gerakan perubahan</li>
+            <li>Adanya tujuan atau ideologi yang jelas</li>
+            <li>Kemampuan kelompok pemimpin untuk meraih dukungan massa</li>
+            <li>Kondisi masyarakat yang sedang mengalami krisis</li>
+        </ul>
+        <p><strong>Contoh perubahan revolusi:</strong></p>
+        <ul>
+            <li>Revolusi Prancis (1789) — mengubah monarki absolut menjadi republik</li>
+            <li>Revolusi Amerika (1776) — kemerdekaan dari Inggris</li>
+            <li>Revolusi Indonesia (1945) — dari negara jajahan menjadi negara merdeka</li>
+            <li>Revolusi Industri (abad 18-19) — mengubah masyarakat agraris menjadi industri</li>
+            <li>Revolusi Rusia (1917) — mengubah sistem tsar menjadi komunis</li>
+        </ul>
+
+        <div class="info-box">
+            <h4>💡 Perbedaan Utama Evolusi vs Revolusi</h4>
+            <ul>
+                <li><strong>Kecepatan:</strong> Evolusi lambat, revolusi cepat</li>
+                <li><strong>Dampak:</strong> Evolusi bertahap, revolusi mendasar dan menyeluruh</li>
+                <li><strong>Konflik:</strong> Evolusi minim konflik, revolusi sering disertai konflik</li>
+                <li><strong>Perencanaan:</strong> Evolusi tidak direncanakan, revolusi biasanya direncanakan</li>
+            </ul>
+        </div>
+
+        <h2>B. Bentuk-Bentuk Perubahan Sosial Berdasarkan Skala Pengaruh</h2>
+        <p>
+            Berdasarkan luas atau tidaknya pengaruh yang ditimbulkan, perubahan sosial dapat 
+            dibedakan menjadi <strong>perubahan kecil</strong> dan <strong>perubahan besar</strong>.
+        </p>
+
+        <h3>1. Perubahan Kecil</h3>
+        <p>
+            <strong>Perubahan kecil</strong> adalah perubahan yang terjadi pada unsur-unsur sosial 
+            yang <strong>tidak membawa dampak langsung</strong> bagi kehidupan masyarakat luas. 
+            Perubahan ini biasanya hanya memengaruhi kelompok tertentu atau aspek tertentu saja.
+        </p>
+        <p><strong>Contoh perubahan kecil:</strong></p>
+        <ul>
+            <li>Perubahan model pakaian atau gaya rambut</li>
+            <li>Perubahan mode aksesoris dan perhiasan</li>
+            <li>Perubahan selera musik di kalangan remaja</li>
+            <li>Perubahan cara penyajian makanan</li>
+            <li>Perubahan istilah atau bahasa gaul di kalangan tertentu</li>
+        </ul>
+
+        <h3>2. Perubahan Besar</h3>
+        <p>
+            <strong>Perubahan besar</strong> adalah perubahan yang <strong>membawa dampak signifikan</strong> 
+            bagi sendi-sendi kehidupan masyarakat. Perubahan ini memengaruhi lembaga-lembaga sosial, 
+            pola hubungan, dan struktur masyarakat secara luas.
+        </p>
+        <p><strong>Contoh perubahan besar:</strong></p>
+        <ul>
+            <li>Industrialisasi — mengubah struktur ekonomi dan sosial masyarakat</li>
+            <li>Urbanisasi — perpindahan penduduk dari desa ke kota</li>
+            <li>Penerapan otonomi daerah — mengubah sistem pemerintahan</li>
+            <li>Reformasi 1998 — mengubah sistem politik Indonesia</li>
+            <li>Masuknya internet — mengubah cara berkomunikasi dan berbisnis</li>
+        </ul>
+
+        <div class="case-study">
+            <h4>📌 Contoh Nyata di Sekitar Kita</h4>
+            <p><strong>Perubahan kecil:</strong> Remaja di MTsN 6 Agam mulai menggunakan istilah 
+            bahasa gaul dalam percakapan sehari-hari. Perubahan ini tidak mengubah struktur sosial 
+            masyarakat secara keseluruhan.</p>
+            <p><strong>Perubahan besar:</strong> Masuknya smartphone dan internet ke pedesaan Agam 
+            mengubah cara masyarakat berkomunikasi, berbisnis (melalui marketplace), dan mengakses 
+            informasi. Perubahan ini berdampak luas pada ekonomi, pendidikan, dan hubungan sosial.</p>
+        </div>
+
+        <h2>C. Bentuk-Bentuk Perubahan Sosial Berdasarkan Perencanaan</h2>
+        <p>
+            Berdasarkan ada atau tidaknya perencanaan, perubahan sosial dibedakan menjadi 
+            <strong>perubahan yang direncanakan</strong> (planned change) dan <strong>perubahan 
+            yang tidak direncanakan</strong> (unplanned change).
+        </p>
+
+        <h3>1. Perubahan yang Direncanakan (Planned Change)</h3>
+        <p>
+            Perubahan yang direncanakan adalah perubahan yang <strong>telah dipersiapkan 
+            sebelumnya</strong> oleh pihak-pihak yang menghendaki perubahan. Pihak yang 
+            menggerakkan perubahan ini disebut <strong>agent of change</strong> (agen perubahan).
+        </p>
+        <p><strong>Ciri-ciri:</strong></p>
+        <ul>
+            <li>Ada tujuan yang jelas dan terukur</li>
+            <li>Direncanakan secara sistematis</li>
+            <li>Ada pihak yang menggerakkan (agent of change)</li>
+            <li>Ada tahapan dan strategi yang jelas</li>
+            <li>Dilakukan melalui program atau kebijakan tertentu</li>
+        </ul>
+        <p><strong>Contoh:</strong></p>
+        <ul>
+            <li>Program Keluarga Berencana (KB) untuk mengendalikan pertumbuhan penduduk</li>
+            <li>Pembangunan jalan tol untuk meningkatkan konektivitas</li>
+            <li>Reformasi pendidikan melalui Kurikulum Merdeka</li>
+            <li>Program electrifying village untuk elektrifikasi desa</li>
+            <li>Pembangunan infrastruktur digital untuk mendukung ekonomi digital</li>
+        </ul>
+
+        <h3>2. Perubahan yang Tidak Direncanakan (Unplanned Change)</h3>
+        <p>
+            Perubahan yang tidak direncanakan adalah perubahan yang <strong>terjadi di luar 
+            jangkauan pengawasan</strong> masyarakat dan tidak dikehendaki. Perubahan ini 
+            biasanya terjadi karena faktor-faktor yang tidak terduga.
+        </p>
+        <p><strong>Ciri-ciri:</strong></p>
+        <ul>
+            <li>Tidak direncanakan sebelumnya</li>
+            <li>Terjadi secara tiba-tiba</li>
+            <li>Seringkali membawa dampak negatif</li>
+            <li>Masyarakat tidak siap menghadapinya</li>
+            <li>Disebabkan oleh faktor alam atau kejadian tak terduga</li>
+        </ul>
+        <p><strong>Contoh:</strong></p>
+        <ul>
+            <li>Bencana alam (gempa bumi, tsunami, banjir besar)</li>
+            <li>Krisis ekonomi yang menyebabkan PHK massal</li>
+            <li>Wabah penyakit (pandemi COVID-19)</li>
+            <li>Kebakaran hutan yang memaksa masyarakat pindah</li>
+            <li>Kecelakaan industri yang mencemari lingkungan</li>
+        </ul>
+
+        <div class="case-study">
+            <h4>📌 Studi Kasus: Pandemi COVID-19</h4>
+            <p>Pandemi COVID-19 yang melanda dunia sejak 2020 merupakan contoh perubahan yang 
+            <strong>tidak direncanakan</strong>. Pandemi ini memaksa masyarakat berubah secara drastis:</p>
+            <ul>
+                <li>Pembelajaran beralih dari tatap muka ke daring (online)</li>
+                <li>Kerja beralih ke work from home (WFH)</li>
+                <li>Transaksi ekonomi beralih ke digital (e-commerce)</li>
+                <li>Interaksi sosial dibatasi dengan protokol kesehatan</li>
+            </ul>
+            <p>Namun, respons terhadap pandemi seperti pembuatan vaksin, program vaksinasi, 
+            dan adaptasi teknologi pembelajaran merupakan bentuk perubahan yang <strong>direncanakan</strong> 
+            sebagai solusi atas masalah yang muncul.</p>
+        </div>
+
+        <h2>D. Bentuk-Bentuk Perubahan Sosial Berdasarkan Orientasi</h2>
+        <p>
+            Berdasarkan arah perkembangannya, perubahan sosial dapat dibedakan menjadi 
+            <strong>progress</strong> (maju) dan <strong>regress</strong> (mundur).
+        </p>
+
+        <h3>1. Progress (Perubahan Maju)</h3>
+        <p>
+            <strong>Progress</strong> adalah perubahan yang <strong>membawa kemajuan</strong> 
+            bagi masyarakat. Perubahan ini memberikan manfaat dan meningkatkan kualitas 
+            kehidupan masyarakat ke arah yang lebih baik.
+        </p>
+        <p><strong>Contoh progress:</strong></p>
+        <ul>
+            <li>Kemajuan teknologi kesehatan (vaksin, alat diagnostik modern)</li>
+            <li>Peningkatan akses pendidikan melalui program wajib belajar</li>
+            <li>Pembangunan infrastruktur yang memudahkan mobilitas</li>
+            <li>Peningkatan kesetaraan gender dalam berbagai bidang</li>
+            <li>Perkembangan teknologi informasi yang memudahkan akses pengetahuan</li>
+        </ul>
+
+        <h3>2. Regress (Perubahan Mundur)</h3>
+        <p>
+            <strong>Regress</strong> adalah perubahan yang <strong>membawa kemunduran</strong> 
+            bagi masyarakat. Perubahan ini menyebabkan penurunan kualitas kehidupan atau 
+            menimbulkan masalah baru.
+        </p>
+        <p><strong>Contoh regress:</strong></p>
+        <ul>
+            <li>Meningkatnya angka kriminalitas di perkotaan</li>
+            <li>Kerusakan lingkungan akibat industrialisasi yang tidak terkendali</li>
+            <li>Memudarnya nilai-nilai gotong royong di masyarakat</li>
+            <li>Meningkatnya kesenjangan sosial antara kaya dan miskin</li>
+            <li>Perang yang menghancurkan tatanan masyarakat</li>
+            <li>Penyalahgunaan narkoba di kalangan remaja</li>
+        </ul>
+
+        <h2>E. Contoh Perubahan Sosial di Berbagai Bidang</h2>
+        <p>
+            Perubahan sosial terjadi di berbagai bidang kehidupan masyarakat. Berikut adalah 
+            contoh-contoh perubahan sosial di berbagai bidang yang dapat diamati dalam kehidupan 
+            sehari-hari.
+        </p>
+
+        <h3>1. Perubahan di Bidang Ekonomi</h3>
+        <ul>
+            <li><strong>Dari sistem barter ke uang:</strong> Masyarakat dulu menukar barang 
+            dengan barang, sekarang menggunakan uang sebagai alat tukar</li>
+            <li><strong>Dari pasar tradisional ke e-commerce:</strong> Belanja tidak lagi 
+            harus datang ke pasar, bisa melalui marketplace online</li>
+            <li><strong>Dari tunai ke cashless:</strong> Pembayaran menggunakan kartu, 
+            QRIS, atau dompet digital (GoPay, OVO, Dana)</li>
+            <li><strong>Munculnya ekonomi gig:</strong> Pekerjaan fleksibel seperti driver 
+            ojek online, freelancer, content creator</li>
+        </ul>
+
+        <h3>2. Perubahan di Bidang Sosial Budaya</h3>
+        <ul>
+            <li><strong>Pergeseran nilai keluarga:</strong> Dari keluarga besar (extended) 
+            ke keluarga inti (nuclear)</li>
+            <li><strong>Perubahan pola pergaulan:</strong> Interaksi tidak lagi harus tatap 
+            muka, bisa melalui media sosial</li>
+            <li><strong>Perubahan gaya hidup:</strong> Konsumtif, hedonisme di kalangan 
+            sebagian masyarakat urban</li>
+            <li><strong>Perubahan peran gender:</strong> Perempuan semakin banyak yang 
+            berkarier di berbagai bidang</li>
+        </ul>
+
+        <h3>3. Perubahan di Bidang Politik</h3>
+        <ul>
+            <li><strong>Dari otoriter ke demokratis:</strong> Reformasi 1998 mengubah 
+            sistem politik Indonesia</li>
+            <li><strong>Pemilihan langsung:</strong> Presiden, kepala daerah, hingga 
+            ketua RT dipilih langsung oleh rakyat</li>
+            <li><strong>Desentralisasi:</strong> Otonomi daerah memberikan kewenangan 
+            lebih besar kepada pemerintah daerah</li>
+            <li><strong>Partisipasi digital:</strong> Masyarakat dapat menyampaikan 
+            aspirasi melalui media sosial dan platform online</li>
+        </ul>
+
+        <h3>4. Perubahan di Bidang Pendidikan</h3>
+        <ul>
+            <li><strong>Dari teacher-centered ke student-centered:</strong> Pembelajaran 
+            lebih berpusat pada siswa</li>
+            <li><strong>Dari konvensional ke digital:</strong> Penggunaan e-learning, 
+            video pembelajaran, dan aplikasi edukasi</li>
+            <li><strong>Pendidikan sepanjang hayat:</strong> Belajar tidak hanya di 
+            sekolah formal, bisa melalui kursus online, webinar, dll</li>
+            <li><strong>Kurikulum adaptif:</strong> Kurikulum Merdeka memberikan 
+            fleksibilitas bagi guru dan siswa</li>
+        </ul>
+
+        <h3>5. Perubahan di Bidang Teknologi</h3>
+        <ul>
+            <li><strong>Revolusi industri 4.0:</strong> Internet of Things (IoT), 
+            artificial intelligence (AI), big data</li>
+            <li><strong>Smartphone:</strong> Mengubah cara berkomunikasi, bekerja, 
+            dan mengakses informasi</li>
+            <li><strong>Media sosial:</strong> Facebook, Instagram, TikTok mengubah 
+            pola interaksi sosial</li>
+            <li><strong>Kendaraan listrik:</strong> Pergeseran dari kendaraan BBM 
+            ke kendaraan listrik</li>
+        </ul>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Bidang</th>
+                    <th>Kondisi Lama</th>
+                    <th>Kondisi Baru</th>
+                    <th>Jenis Perubahan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ekonomi</td>
+                    <td>Pasar tradisional, tunai</td>
+                    <td>E-commerce, cashless</td>
+                    <td>Progress, Planned</td>
+                </tr>
+                <tr>
+                    <td>Sosial</td>
+                    <td>Interaksi tatap muka</td>
+                    <td>Interaksi via media sosial</td>
+                    <td>Progress, Unplanned</td>
+                </tr>
+                <tr>
+                    <td>Politik</td>
+                    <td>Otoriter, sentralistik</td>
+                    <td>Demokratis, desentralisasi</td>
+                    <td>Progress, Planned</td>
+                </tr>
+                <tr>
+                    <td>Pendidikan</td>
+                    <td>Konvensional, tatap muka</td>
+                    <td>Digital, blended learning</td>
+                    <td>Progress, Planned</td>
+                </tr>
+                <tr>
+                    <td>Teknologi</td>
+                    <td>Alat sederhana</td>
+                    <td>AI, IoT, smartphone</td>
+                    <td>Progress, Planned</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>F. Studi Kasus Perubahan Sosial di Indonesia</h2>
+        <p>
+            Indonesia sebagai negara berkembang telah mengalami berbagai bentuk perubahan sosial 
+            yang signifikan. Berikut adalah beberapa studi kasus perubahan sosial di Indonesia 
+            yang dapat dijadikan bahan pembelajaran.
+        </p>
+
+        <h3>1. Reformasi 1998</h3>
+        <p>
+            Reformasi 1998 merupakan contoh <strong>perubahan revolusi</strong> yang mengubah 
+            sistem politik Indonesia secara mendasar. Perubahan ini ditandai dengan:
+        </p>
+        <ul>
+            <li>Jatuhnya rezim Orde Baru yang telah berkuasa selama 32 tahun</li>
+            <li>Perubahan sistem pemerintahan dari sentralistik ke desentralistik</li>
+            <li>Kebebasan pers dan kebebasan berpendapat</li>
+            <li>Pemilihan umum yang demokratis</li>
+            <li>Amandemen UUD 1945 untuk membatasi kekuasaan presiden</li>
+        </ul>
+        <p>
+            Reformasi 1998 termasuk <strong>perubahan besar, revolusi, direncanakan</strong> 
+            (oleh gerakan reformasi), dan <strong>progress</strong> (membawa Indonesia ke 
+            arah yang lebih demokratis).
+        </p>
+
+        <h3>2. Industrialisasi di Jawa</h3>
+        <p>
+            Industrialisasi yang terjadi di Pulau Jawa sejak era Orde Baru merupakan contoh 
+            <strong>perubahan evolusi</strong> yang berlangsung bertahap. Dampaknya:
+        </p>
+        <ul>
+            <li>Berubahnya struktur ekonomi dari agraris ke industri</li>
+            <li>Urbanisasi besar-besaran ke kota-kota industri</li>
+            <li>Munculnya kelas buruh industri</li>
+            <li>Perubahan pola kehidupan masyarakat pedesaan</li>
+            <li>Dampak negatif: kerusakan lingkungan, kesenjangan sosial</li>
+        </ul>
+
+        <h3>3. Digitalisasi Masyarakat Indonesia</h3>
+        <p>
+            Perkembangan teknologi digital di Indonesia sejak 2010-an merupakan contoh 
+            <strong>perubahan besar</strong> yang memengaruhi berbagai aspek kehidupan:
+        </p>
+        <ul>
+            <li>Jumlah pengguna internet mencapai lebih dari 200 juta jiwa (2024)</li>
+            <li>Pertumbuhan e-commerce yang pesat (Tokopedia, Shopee, dll)</li>
+            <li>Munculnya unicorn dan decacorn Indonesia (Gojek, Tokopedia)</li>
+            <li>Perubahan pola konsumsi dan gaya hidup</li>
+            <li>Tantangan baru: hoaks, cyberbullying, kecanduan gadget</li>
+        </ul>
+
+        <div class="case-study">
+            <h4>📌 Studi Kasus Lokal: Perubahan di Sumatera Barat</h4>
+            <p>Masyarakat Minangkabau di Sumatera Barat, termasuk wilayah Agam, juga mengalami 
+            berbagai perubahan sosial yang menarik untuk dikaji:</p>
+            <ul>
+                <li><strong>Sistem matrilineal:</strong> Masih dipertahankan, tetapi mulai 
+                mengalami adaptasi dengan nilai-nilai modern dan Islam</li>
+                <li><strong>Merantau:</strong> Tradisi merantau tetap ada, tetapi kini 
+                diperluas dengan merantau ke luar negeri dan bekerja di sektor modern</li>
+                <li><strong>Pendidikan:</strong> Surau sebagai pusat pendidikan tradisional 
+                kini berdampingan dengan sekolah formal dan madrasah</li>
+                <li><strong>Ekonomi:</strong> Pasar tradisional masih ada, tetapi masyarakat 
+                juga mulai menggunakan marketplace online</li>
+                <li><strong>Budaya:</strong> Adat basandi syarak, syarak basandi Kitabullah 
+                tetap menjadi pedoman, tetapi diadaptasi dengan perkembangan zaman</li>
+            </ul>
+        </div>
+
+        <h2>G. Perubahan Sosial dalam Perspektif Nilai-Nilai Islam</h2>
+        <p>
+            Sebagai peserta didik madrasah, penting untuk memahami perubahan sosial dalam 
+            perspektif nilai-nilai Islam. Islam tidak menolak perubahan, tetapi mengajarkan 
+            umatnya untuk bersikap bijaksana dalam menyikapi perubahan.
+        </p>
+
+        <div class="quote-box">
+            "Setiap yang bernyawa akan merasakan mati, dan sesungguhnya pada hari kiamat 
+            sajalah disempurnakan pahalamu. Barangsiapa dijauhkan dari neraka dan dimasukkan 
+            ke dalam surga, maka sungguh ia telah beruntung. Kehidupan dunia tidak lain 
+            hanyalah kesenangan yang memperdayakan."
+            <span class="author">— QS. Ali Imran [3]: 185</span>
+        </div>
+
+        <p>Ayat di atas mengingatkan bahwa perubahan di dunia ini bersifat sementara. Yang 
+        terpenting adalah bagaimana kita menyikapi perubahan tersebut dalam rangka meraih 
+        kebahagiaan di dunia dan akhirat.</p>
+
+        <h3>1. Prinsip Sikap Muslim terhadap Perubahan</h3>
+        <p>Islam mengajarkan beberapa prinsip dalam menyikapi perubahan sosial:</p>
+        <ul>
+            <li><strong>Al-muhafazhatu 'ala qadimis shalih wal akhdzu bil jadidil ashlah</strong> — 
+            menjaga tradisi lama yang baik dan mengambil hal baru yang lebih baik</li>
+            <li><strong>Tabayyun</strong> — memeriksa kebenaran informasi sebelum menyikapi perubahan</li>
+            <li><strong>Tawazun</strong> — bersikap seimbang, tidak ekstrem menolak atau menerima perubahan</li>
+            <li><strong>I'tidal</strong> — bersikap lurus dan adil dalam menilai perubahan</li>
+        </ul>
+
+        <h3>2. Kriteria Menerima atau Menolak Perubahan</h3>
+        <p>Seorang muslim harus selektif dalam menerima perubahan. Perubahan dapat diterima 
+        jika:</p>
+        <ul>
+            <li>Tidak bertentangan dengan syariat Islam</li>
+            <li>Membawa maslahat (kebaikan) bagi masyarakat</li>
+            <li>Sesuai dengan nilai-nilai akhlak mulia</li>
+            <li>Tidak merusak tatanan sosial yang sudah baik</li>
+            <li>Mendukung perkembangan ilmu dan teknologi yang bermanfaat</li>
+        </ul>
+        <p>Sebaliknya, perubahan harus ditolak jika:</p>
+        <ul>
+            <li>Bertentangan dengan akidah dan syariat Islam</li>
+            <li>Membawa mafsadat (kerusakan) yang lebih besar</li>
+            <li>Menghilangkan identitas keislaman dan kearifan lokal</li>
+            <li>Merusak akhlak dan moral generasi muda</li>
+        </ul>
+
+        <h3>3. Contoh Penerapan dalam Kehidupan Sehari-hari</h3>
+        <ul>
+            <li><strong>Menerima:</strong> Menggunakan smartphone untuk belajar, berdakwah, 
+            dan silaturahmi</li>
+            <li><strong>Menolak:</strong> Menghindari konten negatif di media sosial, 
+            tidak terjebak pada gaya hidup hedonisme</li>
+            <li><strong>Adaptasi:</strong> Memadukan tradisi Minangkabau dengan nilai-nilai 
+            Islam dan modernitas</li>
+            <li><strong>Inovasi:</strong> Menggunakan teknologi untuk mengembangkan ekonomi 
+            umat dan pendidikan Islam</li>
+        </ul>
+
+        <div class="info-box">
+            <h4>📌 Istilah Penting Bab 2</h4>
+            <ul>
+                <li><strong>Evolusi:</strong> Perubahan lambat dan bertahap</li>
+                <li><strong>Revolusi:</strong> Perubahan cepat dan mendasar</li>
+                <li><strong>Agent of change:</strong> Pihak yang menggerakkan perubahan</li>
+                <li><strong>Planned change:</strong> Perubahan yang direncanakan</li>
+                <li><strong>Unplanned change:</strong> Perubahan yang tidak direncanakan</li>
+                <li><strong>Progress:</strong> Perubahan yang membawa kemajuan</li>
+                <li><strong>Regress:</strong> Perubahan yang membawa kemunduran</li>
+                <li><strong>Al-muhafazhatu 'ala qadimis shalih wal akhdzu bil jadidil ashlah:</strong> 
+                Prinsip menjaga tradisi lama yang baik dan mengambil hal baru yang lebih baik</li>
+            </ul>
+        </div>
+
+        <!-- Exam Tips -->
+        <div class="exam-tips">
+            <h3>📝 Poin Penting untuk Ujian</h3>
+            <ul>
+                <li>Kuasai 4 klasifikasi bentuk perubahan sosial: berdasarkan waktu, skala pengaruh, perencanaan, dan orientasi</li>
+                <li>Pahami perbedaan evolusi dan revolusi beserta contohnya</li>
+                <li>Mampu membedakan perubahan kecil dan perubahan besar</li>
+                <li>Pahami perbedaan planned change dan unplanned change</li>
+                <li>Hafalkan contoh-contoh konkret perubahan sosial di berbagai bidang</li>
+                <li>Pahami studi kasus perubahan sosial di Indonesia (Reformasi 1998, Industrialisasi, Digitalisasi)</li>
+                <li>Pahami perubahan sosial dalam konteks masyarakat Minangkabau</li>
+                <li>Kuasai prinsip sikap muslim terhadap perubahan (al-muhafazhatu 'ala qadimis shalih...)</li>
+                <li>Mampu menganalisis suatu peristiwa perubahan sosial berdasarkan 4 klasifikasi</li>
+                <li>Siapkan contoh perubahan sosial di lingkungan sekitar (MTsN 6 Agam, Agam, Sumatera Barat)</li>
+            </ul>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <a href="index.html">🏠 Kembali ke Beranda</a>
+            <a href="uji-formatif-2.html" class="quiz">✍️ Uji Formatif Bab 2</a>
+            <a href="3.html" class="next">Bab Selanjutnya →</a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Ilmu Pengetahuan Sosial</h3>
+                <p>Buku daras untuk peserta didik kelas 9 MTs. Materi perubahan sosial, globalisasi, ekonomi digital, hingga literasi finansial.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Navigasi</h3>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="index.html#tentang">Tentang Buku</a></li>
+                    <li><a href="index.html#bab">Daftar Bab</a></li>
+                    <li><a href="index.html#penulis">Penulis</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Bab Terkait</h3>
+                <ul>
+                    <li><a href="1.html">Bab 1: Perubahan Sosial</a></li>
+                    <li><a href="2.html">Bab 2: Bentuk Perubahan Sosial</a></li>
+                    <li><a href="3.html">Bab 3: Era Modernisasi</a></li>
+                    <li><a href="4.html">Bab 4: Globalisasi</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p>📧 mastutileni34@gmail.com</p>
+                <p>🏫 MTsN 6 Agam</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Leni Mastuti, S.Sos — MTsN 6 Agam. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

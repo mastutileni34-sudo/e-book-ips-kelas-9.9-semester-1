@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilmu Pengetahuan Sosial Kelas 9 Semester 1 | Leni Mastuti, S.Sos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #1a5276, #2e86c1);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f9e79f;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a5276 0%, #2e86c1 50%, #3498db 100%);
+            color: #fff;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #d4e6f1;
+        }
+
+        .hero .description {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .hero .edition {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero .author {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .hero .institution {
+            font-size: 1rem;
+            color: #d4e6f1;
+            margin-bottom: 0.3rem;
+        }
+
+        .hero .email {
+            font-size: 0.9rem;
+            color: #aed6f1;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #f39c12;
+            color: #fff;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .btn:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #1a5276;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #f39c12;
+            margin: 0.5rem auto 0;
+        }
+
+        /* About Section */
+        #tentang {
+            background: #fff;
+            border-radius: 10px;
+            margin-top: 2rem;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #2e86c1;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card h3 {
+            color: #1a5276;
+            margin-bottom: 0.3rem;
+            font-size: 1.05rem;
+        }
+
+        .feature-card p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Structure */
+        .structure {
+            background: #eaf2f8;
+            padding: 1.5rem 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+
+        .structure h3 {
+            color: #1a5276;
+            margin-bottom: 0.8rem;
+        }
+
+        .structure p {
+            margin-bottom: 0.4rem;
+            font-size: 0.95rem;
+        }
+
+        /* Bab Section */
+        #bab {
+            background: #fff;
+            border-radius: 10px;
+            margin-top: 2rem;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .bab-intro {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .bab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+
+        .bab-card {
+            display: flex;
+            align-items: center;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1rem 1.2rem;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            border: 1px solid #e0e0e0;
+        }
+
+        .bab-card:hover {
+            background: #2e86c1;
+            color: #fff;
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(46,134,193,0.3);
+        }
+
+        .bab-card.uts {
+            background: #fef9e7;
+            border-color: #f9e79f;
+        }
+
+        .bab-card.uts:hover {
+            background: #f39c12;
+            border-color: #f39c12;
+        }
+
+        .bab-card.uas {
+            background: #eafaf1;
+            border-color: #a9dfbf;
+        }
+
+        .bab-card.uas:hover {
+            background: #27ae60;
+            border-color: #27ae60;
+        }
+
+        .bab-number {
+            width: 40px;
+            height: 40px;
+            background: #1a5276;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .bab-card.uts .bab-number {
+            background: #f39c12;
+        }
+
+        .bab-card.uas .bab-number {
+            background: #27ae60;
+        }
+
+        .bab-card:hover .bab-number {
+            background: rgba(255,255,255,0.3);
+        }
+
+        .bab-title {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Penulis Section */
+        #penulis {
+            background: #fff;
+            border-radius: 10px;
+            margin-top: 2rem;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .penulis-card {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .penulis-card .avatar {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #1a5276, #2e86c1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2.5rem;
+            color: #fff;
+        }
+
+        .penulis-card h3 {
+            color: #1a5276;
+            font-size: 1.4rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .penulis-card .role {
+            color: #2e86c1;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .penulis-card p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .penulis-card blockquote {
+            background: #f8f9fa;
+            border-left: 4px solid #f39c12;
+            padding: 1rem 1.5rem;
+            font-style: italic;
+            color: #555;
+            margin-top: 1rem;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Contact Section */
+        #kontak {
+            background: #fff;
+            border-radius: 10px;
+            margin-top: 2rem;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .contact-info {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .contact-info a {
+            color: #2e86c1;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1a5276, #2e86c1);
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        footer p {
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        footer .copyright {
+            font-size: 0.85rem;
+            color: #aed6f1;
+            margin-top: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            nav ul li a {
+                font-size: 0.85rem;
+            }
+
+            .bab-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#beranda">Beranda</a></li>
+            <li><a href="#tentang">Tentang Buku</a></li>
+            <li><a href="#bab">Daftar Bab</a></li>
+            <li><a href="#penulis">Penulis</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="beranda">
+        <h1>Ilmu Pengetahuan Sosial</h1>
+        <p class="subtitle">Kelas 9 Semester 1 — MTsN 6 Agam</p>
+        <p class="description">
+            Buku ajar komprehensif untuk peserta didik Madrasah Tsanawiyah kelas IX. 
+            Membahas dinamika perubahan sosial, globalisasi, kearifan lokal, ekonomi digital, 
+            hingga literasi finansial dalam bingkai pembelajaran IPS yang kontekstual dan aplikatif.
+        </p>
+        <span class="edition">📘 Edisi 2026</span>
+        <br>
+        <p class="author">Leni Mastuti, S.Sos</p>
+        <p class="institution">MTsN 6 Agam</p>
+        <p class="email">✉ mastutileni34@gmail.com</p>
+        <a href="#bab" class="btn">Lihat Daftar Bab</a>
+    </header>
+
+    <!-- Tentang Buku -->
+    <section id="tentang">
+        <h2>Tentang Buku</h2>
+        <p style="text-align: center; max-width: 750px; margin: 0 auto; color: #555; line-height: 1.8;">
+            Buku ini dirancang sebagai pegangan utama bagi peserta didik kelas 9 MTsN 6 Agam 
+            dalam mempelajari Ilmu Pengetahuan Sosial Semester 1. Materi disusun secara sistematis 
+            mulai dari konsep perubahan sosial, dinamika globalisasi, hingga keterampilan finansial 
+            di era digital — memadukan pemahaman teori dengan relevansi kehidupan sehari-hari.
+        </p>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="icon">📚</div>
+                <h3>10 Bab Lengkap</h3>
+                <p>Materi terstruktur dari perubahan sosial hingga literasi finansial</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🎯</div>
+                <h3>Kontekstual</h3>
+                <p>Contoh nyata yang relevan dengan kehidupan peserta didik</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">💡</div>
+                <h3>Aktual</h3>
+                <p>Membahas isu terkini: ekonomi digital, modernisasi, dan era global</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">✅</div>
+                <h3>UTS & UAS</h3>
+                <p>Evaluasi pembelajaran terstruktur di tengah dan akhir semester</p>
+            </div>
+        </div>
+
+        <div class="structure">
+            <h3>📖 Struktur Pembahasan</h3>
+            <p>Buku ini disusun secara sistematis dengan pembagian:</p>
+            <p><strong>Bab 1–4:</strong> Perubahan Sosial, Modernisasi, dan Globalisasi</p>
+            <p><strong>Bab 5:</strong> Ujian Tengah Semester (UTS) — Review Bab 1–4</p>
+            <p><strong>Bab 6–9:</strong> Kearifan Lokal, Ekonomi Digital, dan Literasi Finansial</p>
+            <p><strong>Bab 10:</strong> Ujian Akhir Semester (UAS) — Review Komprehensif</p>
+        </div>
+    </section>
+
+    <!-- Daftar Bab -->
+    <section id="bab">
+        <h2>Daftar Bab</h2>
+        <p class="bab-intro">
+            Klik pada setiap bab untuk membuka materi lengkap (file .html terpisah). 
+            Semua bab akan terbuka di tab baru.
+        </p>
+
+        <div class="bab-grid">
+            <a href="1.html" target="_blank" class="bab-card">
+                <span class="bab-number">1</span>
+                <span class="bab-title">Perubahan Sosial</span>
+            </a>
+
+            <a href="2.html" target="_blank" class="bab-card">
+                <span class="bab-number">2</span>
+                <span class="bab-title">Bentuk dan Contoh Perubahan Sosial</span>
+            </a>
+
+            <a href="3.html" target="_blank" class="bab-card">
+                <span class="bab-number">3</span>
+                <span class="bab-title">Perubahan Masyarakat pada Era Modernisasi</span>
+            </a>
+
+            <a href="4.html" target="_blank" class="bab-card">
+                <span class="bab-number">4</span>
+                <span class="bab-title">Globalisasi</span>
+            </a>
+
+            <a href="5.html" target="_blank" class="bab-card uts">
+                <span class="bab-number">UTS</span>
+                <span class="bab-title">Ujian Tengah Semester — Review Materi Bab 1–4</span>
+            </a>
+
+            <a href="6.html" target="_blank" class="bab-card">
+                <span class="bab-number">6</span>
+                <span class="bab-title">Kearifan Lokal</span>
+            </a>
+
+            <a href="7.html" target="_blank" class="bab-card">
+                <span class="bab-number">7</span>
+                <span class="bab-title">Perkembangan Ekonomi Digital</span>
+            </a>
+
+            <a href="8.html" target="_blank" class="bab-card">
+                <span class="bab-number">8</span>
+                <span class="bab-title">Uang dan Lembaga Keuangan</span>
+            </a>
+
+            <a href="9.html" target="_blank" class="bab-card">
+                <span class="bab-number">9</span>
+                <span class="bab-title">Interaksi Abad 21 dan Literasi Finansial</span>
+            </a>
+
+            <a href="10.html" target="_blank" class="bab-card uas">
+                <span class="bab-number">UAS</span>
+                <span class="bab-title">Ujian Akhir Semester — Review Komprehensif</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Tentang Penulis -->
+    <section id="penulis">
+        <h2>Tentang Penulis</h2>
+        <div class="penulis-card">
+            <div class="avatar">👩‍🏫</div>
+            <h3>Leni Mastuti, S.Sos</h3>
+            <p class="role">Guru Ilmu Pengetahuan Sosial — MTsN 6 Agam</p>
+            <p>
+                Penulis adalah pendidik aktif di MTsN 6 Agam dengan fokus pada pengajaran 
+                Ilmu Pengetahuan Sosial. Berpengalaman dalam menyusun materi pembelajaran 
+                yang kontekstual dan relevan dengan perkembangan zaman, khususnya dalam 
+                topik perubahan sosial, globalisasi, dan literasi finansial bagi peserta didik 
+                madrasah tsanawiyah.
+            </p>
+            <p>
+                Buku ini disusun berdasarkan pengalaman mengajar di kelas serta upaya 
+                menghadirkan materi IPS yang dekat dengan kehidupan sehari-hari peserta didik, 
+                sekaligus membekali mereka dengan keterampilan abad 21.
+            </p>
+            <blockquote>
+                "Pembelajaran IPS bukan sekadar menghafal fakta, melainkan memahami 
+                dinamika masyarakat dan membekali generasi muda dengan wawasan global 
+                serta kearifan lokal."
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak">
+        <h2>Informasi Kontak</h2>
+        <p style="color: #666; margin-bottom: 1.5rem;">
+            Untuk informasi lebih lanjut tentang buku ini, silakan hubungi:
+        </p>
+        <div class="contact-info">
+            <p>📧 Email: <a href="mailto:mastutileni34@gmail.com">mastutileni34@gmail.com</a></p>
+            <p>🏫 Institusi: MTsN 6 Agam</p>
+            <p>📅 Tahun Terbit: 2026</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Ilmu Pengetahuan Sosial Kelas 9 Semester 1</strong></p>
+        <p>Leni Mastuti, S.Sos — MTsN 6 Agam</p>
+        <p class="copyright">© 2026 Leni Mastuti, S.Sos — MTsN 6 Agam. Hak Cipta Dilindungi.</p>
+    </footer>
+
+</body>
+</html>

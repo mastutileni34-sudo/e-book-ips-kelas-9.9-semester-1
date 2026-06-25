@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bab 1 - Perubahan Sosial | Ilmu Pengetahuan Sosial Kelas 9</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #1a5276, #2e86c1);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f9e79f;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #1a5276 0%, #2e86c1 100%);
+            color: #fff;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .hero .breadcrumb {
+            font-size: 0.9rem;
+            color: #d4e6f1;
+            margin-bottom: 1rem;
+        }
+
+        .hero .breadcrumb a {
+            color: #f9e79f;
+            text-decoration: none;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .chapter-label {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero .description {
+            max-width: 750px;
+            margin: 0 auto 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .nav-buttons a {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            color: #fff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .nav-buttons a:hover {
+            background: #f39c12;
+            border-color: #f39c12;
+        }
+
+        .nav-buttons a.primary {
+            background: #f39c12;
+            border-color: #f39c12;
+        }
+
+        .nav-buttons a.primary:hover {
+            background: #e67e22;
+            border-color: #e67e22;
+        }
+
+        /* Content */
+        .content {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .content h2 {
+            color: #1a5276;
+            font-size: 1.6rem;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #f39c12;
+        }
+
+        .content h2:first-child {
+            margin-top: 0;
+        }
+
+        .content h3 {
+            color: #2e86c1;
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.8rem;
+        }
+
+        .content p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .content ul, .content ol {
+            margin: 1rem 0 1rem 1.5rem;
+        }
+
+        .content ul li, .content ol li {
+            margin-bottom: 0.5rem;
+        }
+
+        .content strong {
+            color: #1a5276;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: #eaf2f8;
+            border-left: 4px solid #2e86c1;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-box h4 {
+            color: #1a5276;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .info-box ul {
+            margin: 0.5rem 0 0 1.2rem;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            background: #fef9e7;
+            border-left: 4px solid #f39c12;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: #555;
+        }
+
+        .quote-box .author {
+            display: block;
+            margin-top: 0.5rem;
+            font-style: normal;
+            font-weight: 600;
+            color: #1a5276;
+            font-size: 0.9rem;
+        }
+
+        /* Table */
+        .content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: #fff;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+        }
+
+        .content table th {
+            background: #1a5276;
+            color: #fff;
+            padding: 0.8rem;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        .content table td {
+            padding: 0.8rem;
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 0.95rem;
+        }
+
+        .content table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .content table tr:hover {
+            background: #eaf2f8;
+        }
+
+        /* Exam Tips */
+        .exam-tips {
+            background: linear-gradient(135deg, #fef9e7, #fdebd0);
+            border: 2px solid #f39c12;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+        }
+
+        .exam-tips h3 {
+            color: #d68910;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .exam-tips ul {
+            margin-left: 1.2rem;
+        }
+
+        .exam-tips ul li {
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .bottom-nav a {
+            display: inline-block;
+            background: #1a5276;
+            color: #fff;
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .bottom-nav a:hover {
+            background: #2e86c1;
+            transform: translateY(-2px);
+        }
+
+        .bottom-nav a.quiz {
+            background: #f39c12;
+        }
+
+        .bottom-nav a.quiz:hover {
+            background: #e67e22;
+        }
+
+        .bottom-nav a.next {
+            background: #27ae60;
+        }
+
+        .bottom-nav a.next:hover {
+            background: #229954;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #1a5276, #2e86c1);
+            color: #fff;
+            padding: 3rem 2rem 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #f9e79f;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-section p {
+            font-size: 0.9rem;
+            color: #d4e6f1;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        .footer-section ul li a {
+            color: #d4e6f1;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #f9e79f;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.85rem;
+            color: #aed6f1;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .content {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+
+            .content h2 {
+                font-size: 1.3rem;
+            }
+
+            .bottom-nav {
+                flex-direction: column;
+            }
+
+            .bottom-nav a {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="index.html#bab">Daftar Bab</a></li>
+            <li><a href="index.html#penulis">Penulis</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="breadcrumb">
+            <a href="index.html">Pengembangan dan Inovasi Kurikulum</a> / 
+            <a href="index.html">Beranda</a>
+        </div>
+        <span class="chapter-label">BAB 1</span>
+        <h1>Perubahan Sosial</h1>
+        <p class="description">
+            Memahami hakikat perubahan sosial, teori-teori yang melandasinya, faktor penyebab, 
+            bentuk-bentuk, serta dampak perubahan sosial dalam kehidupan masyarakat. 
+            Membekali peserta didik dengan kemampuan menganalisis dinamika masyarakat di sekitarnya.
+        </p>
+        <div class="nav-buttons">
+            <a href="index.html">🏠 Beranda</a>
+            <a href="uji-formatif-1.html" class="primary">📝 Uji Formatif Bab 1</a>
+            <a href="2.html">Bab Selanjutnya →</a>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="content">
+
+        <h2>A. Pengertian Perubahan Sosial</h2>
+        <p>
+            Masyarakat merupakan entitas yang dinamis, artinya selalu mengalami perubahan dari waktu ke waktu. 
+            Tidak ada masyarakat yang berhenti berkembang — setiap masyarakat pasti mengalami perubahan, 
+            baik dalam skala kecil maupun besar. Perubahan-perubahan inilah yang dalam ilmu sosiologi 
+            dikenal dengan istilah <strong>perubahan sosial</strong>.
+        </p>
+        <p>
+            Secara sederhana, <strong>perubahan sosial</strong> adalah segala perubahan yang terjadi 
+            dalam masyarakat yang memengaruhi sistem sosialnya, termasuk nilai-nilai, sikap-sikap, 
+            dan pola perilaku di antara kelompok-kelompok dalam masyarakat. Perubahan sosial 
+            merupakan proses alami yang terjadi karena adanya ketidakpuasan terhadap kondisi existing 
+            atau karena adanya pengaruh dari luar.
+        </p>
+
+        <h3>Definisi Perubahan Sosial Menurut Para Ahli</h3>
+
+        <div class="quote-box">
+            <strong>Emile Durkheim:</strong> Perubahan sosial terjadi sebagai akibat dari perubahan 
+            kondisi masyarakat yang memengaruhi cara berpikir, bertindak, dan perasaan individu 
+            dalam masyarakat tersebut.
+        </div>
+
+        <div class="quote-box">
+            <strong>Kingsley Davis:</strong> Perubahan sosial adalah perubahan-perubahan yang terjadi 
+            dalam struktur dan fungsi masyarakat, misalnya munculnya pengorganisasian buruh 
+            dalam masyarakat kapitalis.
+        </div>
+
+        <div class="quote-box">
+            <strong>Mac Iver:</strong> Perubahan sosial adalah perubahan-perubahan yang terjadi 
+            dalam hubungan sosial (social relations) atau perubahan terhadap keseimbangan 
+            hubungan sosial.
+        </div>
+
+        <div class="quote-box">
+            <strong>William F. Ogburn:</strong> Perubahan sosial adalah perubahan yang mencakup 
+            unsur-unsur kebudayaan baik yang material maupun immaterial yang mempunyai dampak 
+            besar atau kecil terhadap unsur-unsur kebudayaan lainnya.
+            <span class="author">— Fokus pada <em>cultural lag</em> (ketertinggalan budaya)</span>
+        </div>
+
+        <div class="quote-box">
+            <strong>Selo Soemardjan:</strong> Perubahan sosial adalah segala perubahan pada lembaga-lembaga 
+            kemasyarakatan di dalam suatu masyarakat yang memengaruhi sistem sosialnya, termasuk 
+            di dalamnya nilai-nilai, sikap, dan pola perilaku di antara kelompok-kelompok dalam masyarakat.
+            <span class="author">— Sosiolog Indonesia</span>
+        </div>
+
+        <div class="info-box">
+            <h4>💡 Konsep Kunci</h4>
+            <p>Perubahan sosial tidak hanya mencakup perubahan fisik atau teknologi, tetapi juga 
+            perubahan pada aspek:</p>
+            <ul>
+                <li><strong>Nilai dan norma</strong> yang berlaku di masyarakat</li>
+                <li><strong>Pola perilaku</strong> individu dan kelompok</li>
+                <li><strong>Lembaga-lembaga sosial</strong> (keluarga, pendidikan, ekonomi, politik)</li>
+                <li><strong>Stratifikasi sosial</strong> (pelapisan masyarakat)</li>
+                <li><strong>Hubungan antar-kelompok</strong> dalam masyarakat</li>
+            </ul>
+        </div>
+
+        <h2>B. Teori-Teori Perubahan Sosial</h2>
+        <p>
+            Para ahli sosiologi telah mengembangkan berbagai teori untuk menjelaskan bagaimana 
+            dan mengapa masyarakat berubah. Memahami teori-teori ini membantu kita menganalisis 
+            perubahan sosial secara lebih mendalam dan sistematis.
+        </p>
+
+        <h3>1. Teori Evolusi (Evolutionary Theory)</h3>
+        <p>
+            Teori ini memandang perubahan sosial sebagai proses yang <strong>lambat dan bertahap</strong>, 
+            berlangsung dalam jangka waktu yang panjang. Masyarakat berkembang dari bentuk yang 
+            sederhana menuju bentuk yang lebih kompleks dan modern, mirip dengan teori evolusi 
+            biologis Charles Darwin.
+        </p>
+        <ul>
+            <li><strong>Auguste Comte:</strong> Masyarakat berkembang melalui tiga tahap — teologis, 
+            metafisis, dan positif (ilmiah).</li>
+            <li><strong>Herbert Spencer:</strong> Masyarakat berkembang dari bentuk sederhana 
+            (primitive) menuju bentuk kompleks (modern) melalui proses diferensiasi.</li>
+            <li><strong>Emile Durkheim:</strong> Masyarakat bergerak dari solidaritas mekanik 
+            (masyarakat tradisional) menuju solidaritas organik (masyarakat modern).</li>
+        </ul>
+        <p>
+            <strong>Contoh:</strong> Masyarakat agraris yang awalnya hidup berkelompok kecil 
+            dengan pembagian kerja sederhana, berkembang menjadi masyarakat industri dengan 
+            pembagian kerja yang kompleks dan spesialisasi tinggi.
+        </p>
+
+        <h3>2. Teori Revolusi (Revolutionary Theory)</h3>
+        <p>
+            Berbeda dengan teori evolusi, teori revolusi menyatakan bahwa perubahan sosial dapat 
+            terjadi secara <strong>cepat dan mendasar</strong>. Perubahan ini biasanya disertai 
+            dengan pergolakan besar yang mengubah struktur masyarakat secara menyeluruh dalam 
+            waktu singkat.
+        </p>
+        <ul>
+            <li><strong>Karl Marx:</strong> Perubahan sosial terjadi melalui konflik kelas 
+            (pertentangan antara kaum borjuis dan proletar) yang berujung pada revolusi.</li>
+            <li><strong>Crane Brinton:</strong> Revolusi melewati beberapa tahap — gejala awal, 
+            liberal moderat, radikalisasi, teror, dan pemulihan.</li>
+        </ul>
+        <p>
+            <strong>Contoh:</strong> Revolusi Prancis (1789) yang mengubah sistem monarki absolut 
+            menjadi republik; Revolusi Indonesia (1945) yang mengubah status dari negara jajahan 
+            menjadi negara merdeka.
+        </p>
+
+        <h3>3. Teori Siklus (Cyclical Theory)</h3>
+        <p>
+            Teori ini memandang perubahan sosial sebagai suatu <strong>siklus yang berulang</strong>, 
+            mirip dengan siklus kehidupan manusia — lahir, tumbuh, jaya, dan mati. Peradaban 
+            dianggap memiliki "umur" dan akan mengalami kemunduran setelah mencapai puncak kejayaan.
+        </p>
+        <ul>
+            <li><strong>Oswald Spengler:</strong> Setiap peradaban memiliki siklus hidup — 
+            lahir, berkembang, jaya, dan runtuh. Peradaban Barat, menurutnya, sedang menuju keruntuhan.</li>
+            <li><strong>Arnold J. Toynbee:</strong> Peradaban muncul dan berkembang sebagai 
+            respons terhadap tantangan. Jika tidak mampu menjawab tantangan, peradaban akan runtuh.</li>
+            <li><strong>Pitirim A. Sorokin:</strong> Kebudayaan berfluktuasi antara bentuk 
+            ideational (spiritual), sensate (material), dan idealistic (perpaduan keduanya).</li>
+        </ul>
+        <p>
+            <strong>Contoh:</strong> Kejayaan dan keruntuhan Kerajaan Romawi, Majapahit, 
+            atau Kesultanan Utsmaniyah dapat dipandang melalui lensa teori siklus.
+        </p>
+
+        <h3>4. Teori Fungsionalis (Functionalist Theory)</h3>
+        <p>
+            Teori ini menekankan bahwa masyarakat merupakan suatu sistem yang terdiri dari 
+            unsur-unsur yang saling bergantung. Perubahan pada satu unsur akan memengaruhi 
+            unsur lainnya. Masyarakat cenderung mencari <strong>keseimbangan baru</strong> 
+            setelah terjadi perubahan.
+        </p>
+        <ul>
+            <li><strong>Talcott Parsons:</strong> Perubahan sosial adalah proses penyesuaian 
+            unsur-unsur masyarakat untuk mencapai keseimbangan baru (equilibrium).</li>
+            <li><strong>William F. Ogburn:</strong> Memperkenalkan konsep <em>cultural lag</em> — 
+            ketertinggalan unsur kebudayaan non-material terhadap unsur kebudayaan material 
+            (teknologi).</li>
+        </ul>
+        <p>
+            <strong>Contoh:</strong> Masuknya internet (unsur material) menyebabkan perubahan 
+            pada cara berkomunikasi, belajar, dan berbisnis (unsur non-material), meskipun 
+            adakalanya terjadi ketertinggalan dalam norma dan etika bermedia digital.
+        </p>
+
+        <h2>C. Faktor-Faktor Penyebab Perubahan Sosial</h2>
+        <p>
+            Perubahan sosial tidak terjadi tanpa sebab. Ada berbagai faktor yang mendorong 
+            masyarakat untuk berubah. Secara umum, faktor-faktor ini dikelompokkan menjadi 
+            dua, yaitu faktor <strong>internal</strong> (dari dalam masyarakat) dan faktor 
+            <strong>eksternal</strong> (dari luar masyarakat).
+        </p>
+
+        <h3>1. Faktor Internal</h3>
+        <p>Faktor internal adalah faktor-faktor yang berasal dari dalam masyarakat itu sendiri:</p>
+        <ul>
+            <li><strong>Dinamika Penduduk:</strong> Perubahan jumlah penduduk, seperti kelahiran, 
+            kematian, dan migrasi, dapat memengaruhi struktur sosial masyarakat.</li>
+            <li><strong>Penemuan-Penemuan Baru (Inovasi):</strong> Penemuan baru (discovery) 
+            atau penciptaan baru (invention) di bidang teknologi, ilmu pengetahuan, atau seni 
+            dapat mengubah cara hidup masyarakat. Contoh: penemuan listrik, internet, smartphone.</li>
+            <li><strong>Pertentangan (Konflik) dalam Masyarakat:</strong> Konflik antarindividu, 
+            antarkelompok, atau antargenerasi dapat mendorong perubahan sosial. Contoh: 
+            pertentangan antara kaum muda yang menginginkan perubahan dengan kaum tua yang 
+            mempertahankan tradisi.</li>
+            <li><strong>Pemberontakan atau Revolusi:</strong> Gerakan perlawanan terhadap 
+            penguasa atau sistem yang ada dapat mengubah struktur politik dan sosial secara drastis.</li>
+        </ul>
+
+        <h3>2. Faktor Eksternal</h3>
+        <p>Faktor eksternal adalah faktor-faktor yang berasal dari luar masyarakat:</p>
+        <ul>
+            <li><strong>Lingkungan Alam:</strong> Bencana alam seperti gempa bumi, banjir, 
+            atau perubahan iklim dapat memaksa masyarakat untuk berpindah atau mengubah cara hidup.</li>
+            <li><strong>Pengaruh Kebudayaan Masyarakat Lain:</strong> Melalui proses 
+            <em>difusi</em> (penyebaran), <em>akulturasi</em> (percampuran budaya), dan 
+            <em>asimilasi</em> (pembauran budaya), unsur-unsur kebudayaan asing dapat 
+            memengaruhi kebudayaan lokal.</li>
+            <li><strong>Peperangan:</strong> Konflik antarnegara dapat membawa perubahan besar, 
+            baik dalam bentuk penjajahan maupun kemenangan yang membawa ide-ide baru.</li>
+        </ul>
+
+        <h2>D. Faktor Pendorong dan Penghambat Perubahan Sosial</h2>
+        <p>
+            Tidak semua masyarakat menerima perubahan dengan mudah. Ada faktor-faktor yang 
+            mendorong perubahan, tetapi ada pula faktor-faktor yang menghambatnya.
+        </p>
+
+        <h3>Faktor Pendorong Perubahan Sosial</h3>
+        <ul>
+            <li><strong>Sikap terbuka terhadap hal baru:</strong> Masyarakat yang toleran dan 
+            terbuka cenderung lebih mudah menerima perubahan.</li>
+            <li><strong>Sistem pelapisan sosial yang terbuka:</strong> Mobilitas sosial yang 
+            tinggi mendorong masyarakat untuk terus berkembang.</li>
+            <li><strong>Penduduk yang heterogen:</strong> Keragaman latar belakang membawa 
+            berbagai sudut pandang dan inovasi.</li>
+            <li><strong>Ketidakpuasan terhadap kondisi existing:</strong> Rasa tidak puas 
+            mendorong masyarakat mencari perbaikan.</li>
+            <li><strong>Orientasi ke masa depan:</strong> Masyarakat yang berorientasi maju 
+            lebih mudah menerima perubahan.</li>
+            <li><strong>Pendidikan yang maju:</strong> Pendidikan membuka wawasan dan 
+            mendorong berpikir kritis.</li>
+            <li><strong>Toleransi terhadap penyimpangan:</strong> Memberi ruang bagi 
+            ide-ide baru yang awalnya dianggap menyimpang.</li>
+        </ul>
+
+        <h3>Faktor Penghambat Perubahan Sosial</h3>
+        <ul>
+            <li><strong>Sikap masyarakat yang tradisional:</strong> Keterikatan pada nilai-nilai 
+            lama membuat masyarakat sulit menerima perubahan.</li>
+            <li><strong>Rasa takut akan kegoyahan integrasi:</strong> Kekhawatiran bahwa 
+            perubahan akan merusak keutuhan masyarakat.</li>
+            <li><strong>Prasangka terhadap hal baru (asing):</strong> Penolakan terhadap 
+            unsur-unsur kebudayaan asing.</li>
+            <li><strong>Adat atau kebiasaan yang mengakar kuat:</strong> Tradisi yang sudah 
+            mendarah daging sulit diubah.</li>
+            <li><strong>Hambatan ideologis:</strong> Keyakinan tertentu yang bertentangan 
+            dengan perubahan.</li>
+            <li><strong>Pasalnya perkembangan ilmu pengetahuan yang lambat:</strong> 
+            Kurangnya akses terhadap pendidikan dan informasi.</li>
+            <li><strong>Sikap pasrah (fatalisme):</strong> Pandangan bahwa nasib tidak 
+            dapat diubah.</li>
+        </ul>
+
+        <h2>E. Bentuk-Bentuk Perubahan Sosial</h2>
+        <p>
+            Perubahan sosial dapat diklasifikasikan ke dalam beberapa bentuk berdasarkan 
+            berbagai kriteria. Berikut adalah bentuk-bentuk perubahan sosial yang paling umum:
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Kriteria</th>
+                    <th>Bentuk Perubahan</th>
+                    <th>Penjelasan</th>
+                    <th>Contoh</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="2"><strong>Waktu</strong></td>
+                    <td>Evolusi (lambat)</td>
+                    <td>Perubahan yang berlangsung lama dan bertahap</td>
+                    <td>Perubahan dari masyarakat berburu ke masyarakat agraris</td>
+                </tr>
+                <tr>
+                    <td>Revolusi (cepat)</td>
+                    <td>Perubahan yang berlangsung cepat dan mendasar</td>
+                    <td>Revolusi Indonesia 1945, Revolusi Industri</td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><strong>Skala Pengaruh</strong></td>
+                    <td>Perubahan kecil</td>
+                    <td>Tidak membawa dampak langsung bagi kehidupan masyarakat luas</td>
+                    <td>Perubahan model pakaian, gaya rambut</td>
+                </tr>
+                <tr>
+                    <td>Perubahan besar</td>
+                    <td>Membawa dampak signifikan bagi sendi-sendi kehidupan masyarakat</td>
+                    <td>Industrialisasi, urbanisasi</td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><strong>Rencana</strong></td>
+                    <td>Perubahan yang direncanakan (planned change)</td>
+                    <td>Direncanakan terlebih dahulu oleh pihak yang menghendaki perubahan (agent of change)</td>
+                    <td>Pembangunan jalan tol, program KB, reformasi pendidikan</td>
+                </tr>
+                <tr>
+                    <td>Perubahan tidak direncanakan (unplanned change)</td>
+                    <td>Terjadi di luar jangkauan pengawasan masyarakat</td>
+                    <td>Bencana alam, krisis ekonomi</td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><strong>Orientasi</strong></td>
+                    <td>Progress (maju)</td>
+                    <td>Perubahan yang membawa kemajuan bagi masyarakat</td>
+                    <td>Pemajuan teknologi kesehatan, pendidikan</td>
+                </tr>
+                <tr>
+                    <td>Regress (mundur)</td>
+                    <td>Perubahan yang membawa kemunduran bagi masyarakat</td>
+                    <td>Perang, kemiskinan, krisis moral</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>F. Dampak Perubahan Sosial</h2>
+        <p>
+            Perubahan sosial membawa dampak yang luas bagi kehidupan masyarakat. Dampak ini 
+            dapat bersifat <strong>positif</strong> maupun <strong>negatif</strong>, tergantung 
+            pada cara masyarakat menyikapinya.
+        </p>
+
+        <h3>Dampak Positif</h3>
+        <ul>
+            <li><strong>Berkembangnya ilmu pengetahuan dan teknologi:</strong> Masyarakat 
+            semakin maju dan modern.</li>
+            <li><strong>Meningkatnya taraf hidup:</strong> Akses terhadap pendidikan, kesehatan, 
+            dan ekonomi semakin baik.</li>
+            <li><strong>Terbentuknya nilai-nilai dan norma baru:</strong> Yang lebih sesuai 
+            dengan perkembangan zaman, seperti kesetaraan gender, hak asasi manusia.</li>
+            <li><strong>Terbukanya akses informasi:</strong> Masyarakat lebih mudah mendapatkan 
+            pengetahuan dari berbagai sumber.</li>
+            <li><strong>Peningkatan efisiensi kerja:</strong> Teknologi mempermudah pekerjaan manusia.</li>
+            <li><strong>Terbentuknya kelas sosial baru:</strong> Munculnya mobilitas sosial 
+            yang lebih terbuka.</li>
+        </ul>
+
+        <h3>Dampak Negatif</h3>
+        <ul>
+            <li><strong>Gegar budaya (culture shock):</strong> Ketidaksiapan masyarakat 
+            menghadapi perubahan yang terlalu cepat.</li>
+            <li><strong>Ketertinggalan budaya (cultural lag):</strong> Sebagian unsur 
+            kebudayaan tidak mampu mengikuti perubahan unsur lainnya.</li>
+            <li><strong>Disorganisasi sosial:</strong> Memudarnya nilai dan norma yang 
+            menyebabkan kekacauan sosial.</li>
+            <li><strong>Meningkatnya individualisme:</strong> Solidaritas sosial melemah, 
+            terutama di perkotaan.</li>
+            <li><strong>Kriminalitas:</strong> Perubahan ekonomi dan sosial dapat memicu 
+            tindak kejahatan.</li>
+            <li><strong>Konflik antargenerasi:</strong> Perbedaan nilai antara generasi 
+            tua dan muda.</li>
+            <li><strong>Kerusakan lingkungan:</strong> Industrialisasi sering kali 
+            berdampak negatif pada alam.</li>
+        </ul>
+
+        <div class="info-box">
+            <h4>📌 Istilah Penting</h4>
+            <ul>
+                <li><strong>Culture Shock (Gegar Budaya):</strong> Kegoncangan psikologis 
+                yang dialami individu ketika berhadapan dengan kebudayaan yang berbeda.</li>
+                <li><strong>Cultural Lag (Ketertinggalan Budaya):</strong> Ketidaksesuaian 
+                antara unsur-unsur kebudayaan yang berubah dengan kecepatan berbeda.</li>
+                <li><strong>Disorganisasi Sosial:</strong> Pudarnya nilai dan norma yang 
+                sebelumnya menjadi pedoman masyarakat.</li>
+            </ul>
+        </div>
+
+        <h2>G. Relevansi dengan Nilai-Nilai Islam dan Kehidupan Sehari-hari</h2>
+        <p>
+            Sebagai peserta didik madrasah, memahami perubahan sosial juga penting dalam 
+            kaitannya dengan nilai-nilai Islam dan kehidupan sehari-hari. Islam sendiri 
+            mengajarkan bahwa perubahan adalah sunnatullah (ketetapan Allah) yang pasti terjadi.
+        </p>
+
+        <div class="quote-box">
+            "Sesungguhnya Allah tidak akan mengubah keadaan suatu kaum sebelum mereka 
+            mengubah keadaan diri mereka sendiri."
+            <span class="author">— QS. Ar-Ra'd [13]: 11</span>
+        </div>
+
+        <p>Ayat di atas menegaskan bahwa perubahan merupakan bagian dari kehidupan dan 
+        manusia memiliki peran aktif dalam menentukan arah perubahannya. Beberapa hal yang 
+        perlu diperhatikan oleh peserta didik dalam menghadapi perubahan sosial:</p>
+
+        <h3>1. Sikap Selektif terhadap Perubahan</h3>
+        <p>
+            Tidak semua perubahan harus diterima begitu saja. Islam mengajarkan umatnya untuk 
+            bersikap kritis dan selektif — menerima perubahan yang membawa kebaikan (maslahat) 
+            dan menolak perubahan yang bertentangan dengan nilai-nilai agama.
+        </p>
+
+        <h3>2. Menjati Identitas sebagai Muslim</h3>
+        <p>
+            Di tengah arus globalisasi dan modernisasi, peserta didik harus mampu menjaga 
+            identitas keislamannya tanpa harus menolak kemajuan. Konsep <em>al-muhafazhatu 
+            'ala qadimis shalih wal akhdzu bil jadidil ashlah</em> (menjaga tradisi lama 
+            yang baik dan mengambil hal baru yang lebih baik) menjadi pedoman penting.
+        </p>
+
+        <h3>3. Pemanfaatan Teknologi untuk Kebaikan</h3>
+        <p>
+            Perubahan di bidang teknologi harus dimanfaatkan untuk hal-hal yang positif, 
+            seperti belajar, berdakwah, dan membantu sesama. Teknologi adalah alat — 
+            baik atau buruknya tergantung pada cara manusia menggunakannya.
+        </p>
+
+        <h3>4. Memperkuat Iman dan Ilmu</h3>
+        <p>
+            Iman dan ilmu adalah benteng utama dalam menghadapi perubahan sosial. Dengan 
+            iman yang kuat, peserta didik tidak akan mudah terbawa arus negatif. Dengan 
+            ilmu yang luas, peserta didik mampu memilah dan memilih perubahan yang bermanfaat.
+        </p>
+
+        <h3>Contoh Penerapan dalam Kehidupan Sehari-hari</h3>
+        <ul>
+            <li>Menggunakan media sosial untuk menyebarkan konten positif dan edukatif</li>
+            <li>Memfilter informasi yang diterima agar tidak termakan hoaks</li>
+            <li>Menjaga adab dan etika Islam dalam berinteraksi di dunia digital</li>
+            <li>Tetap menghormati orang tua dan guru meskipun hidup di era modern</li>
+            <li>Memadukan nilai-nilai tradisi Minangkabau dengan nilai-nilai Islam dan modernitas</li>
+        </ul>
+
+        <!-- Exam Tips -->
+        <div class="exam-tips">
+            <h3>📝 Poin Penting untuk Ujian</h3>
+            <ul>
+                <li>Pahami pengertian perubahan sosial menurut beberapa ahli (terutama Selo Soemardjan dan Kingsley Davis)</li>
+                <li>Kuasai 4 teori utama perubahan sosial: evolusi, revolusi, siklus, dan fungsionalis</li>
+                <li>Bedakan faktor internal dan eksternal penyebab perubahan sosial</li>
+                <li>Hafalkan faktor pendorong dan penghambat perubahan sosial</li>
+                <li>Pahami bentuk-bentuk perubahan sosial berdasarkan waktu, skala, rencana, dan orientasi</li>
+                <li>Mampu menjelaskan dampak positif dan negatif perubahan sosial</li>
+                <li>Pahami istilah <em>cultural lag</em>, <em>culture shock</em>, dan <em>disorganisasi sosial</em></li>
+                <li>Siapkan contoh konkret perubahan sosial di lingkungan sekitar</li>
+                <li>Pahami kaitan perubahan sosial dengan nilai-nilai Islam (QS. Ar-Ra'd: 11)</li>
+            </ul>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <a href="index.html">🏠 Kembali ke Beranda</a>
+            <a href="uji-formatif-1.html" class="quiz">✍️ Uji Formatif Bab 1</a>
+            <a href="2.html" class="next">Bab Selanjutnya →</a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Ilmu Pengetahuan Sosial</h3>
+                <p>Buku daras untuk peserta didik kelas 9 MTs. Materi perubahan sosial, globalisasi, ekonomi digital, hingga literasi finansial.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Navigasi</h3>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="index.html#tentang">Tentang Buku</a></li>
+                    <li><a href="index.html#bab">Daftar Bab</a></li>
+                    <li><a href="index.html#penulis">Penulis</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Bab Terkait</h3>
+                <ul>
+                    <li><a href="1.html">Bab 1: Perubahan Sosial</a></li>
+                    <li><a href="2.html">Bab 2: Bentuk Perubahan Sosial</a></li>
+                    <li><a href="3.html">Bab 3: Era Modernisasi</a></li>
+                    <li><a href="4.html">Bab 4: Globalisasi</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kontak</h3>
+                <p>📧 mastutileni34@gmail.com</p>
+                <p>🏫 MTsN 6 Agam</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Leni Mastuti, S.Sos — MTsN 6 Agam. Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
